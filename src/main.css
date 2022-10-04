@@ -1,0 +1,22 @@
+.main-nav {
+  background-color: black;
+  margin: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 70vw;
+}
+.main-nav ul {
+  list-style-type: none;
+}
+.main-nav ul a {
+  text-decoration: none;
+  margin: auto;
+  color: white;
+}
+.main-nav.nav-active {
+  left: 0vw;
+}
+.main-nav.nav-hidden {
+  left: 70vw;
+}/*# sourceMappingURL=main.css.map */
