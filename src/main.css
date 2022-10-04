@@ -1,22 +1,81 @@
 .main-nav {
-  background-color: black;
-  margin: auto;
+  background-color: rgb(10, 33, 36);
   position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 70vw;
+  top: 0;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
 }
 .main-nav ul {
   list-style-type: none;
-}
-.main-nav ul a {
-  text-decoration: none;
   margin: auto;
+}
+.main-nav ul li {
+  border-bottom: 1px solid rgb(255, 255, 255);
+  padding: 2rem;
+}
+.main-nav ul li a {
+  text-decoration: none;
   color: white;
 }
+.main-nav ul li a .active {
+  color: orange;
+}
 .main-nav.nav-active {
-  left: 0vw;
+  opacity: 1;
 }
 .main-nav.nav-hidden {
-  left: 70vw;
+  opacity: 0;
+}
+
+.menu-btn {
+  position: absolute;
+  z-index: 1;
+  left: 1rem;
+  height: 20px;
+  padding: 0.2rem;
+  width: 28px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.4s ease-in-out;
+}
+.menu-btn_burger {
+  border-radius: 1px;
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  width: 28px;
+  height: 3px;
+  transition: all 0.4s ease-in-out;
+  background: linear-gradient(to right, rgb(157, 255, 0), rgb(0, 195, 255));
+}
+.menu-btn_burger::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  border-radius: 1px;
+  width: 28px;
+  height: 3px;
+  transition: all 0.4s ease-in-out;
+  background: linear-gradient(to right, rgb(0, 255, 213), rgb(255, 0, 0), rgb(162, 0, 255));
+}
+.menu-btn_burger::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 20px;
+  height: 3px;
+  background: linear-gradient(to right, rgb(153, 0, 255), rgb(0, 255, 213), rgb(238, 255, 0));
+  transition: all 0.4s ease-in-out;
+}
+.menu-btn_burger.open {
+  transform: rotate(0deg);
+  background: transparent;
+}
+.menu-btn_burger.open::before {
+  transform: rotate(45deg) translate(5px, 8px);
+}
+.menu-btn_burger.open::after {
+  width: 28px;
+  transform: rotate(-45deg) translate(3px, -7px);
 }/*# sourceMappingURL=main.css.map */
