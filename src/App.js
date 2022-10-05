@@ -1,20 +1,18 @@
 import NavBar from './components/NavBar';
 import './App.css';
-import Home from './components/Home'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import BuyCrypto from './components/BuyCrypto';
+import { BrowserRouter } from 'react-router-dom';
+import Body from './components/Body';
+import { ThemeProvider } from './components/context/Theme'
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path='/buy-crypto' element={<BuyCrypto/>}/>
-        </Routes>
-      </div>
-    </BrowserRouter>
+
+    <ThemeProvider>
+      <BrowserRouter>
+        <NavBar />
+        <Body />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

@@ -1,52 +1,73 @@
 import { NavLink } from "react-router-dom";
 import { useRef } from "react";
-import {SiBitcoin} from 'react-icons/si'
+import { FiLogOut } from 'react-icons/fi'
+import { useThemeContext } from "./context/Theme";
 let showMenu = false;
 export default function NavBar() {
+    const { setCurrentTheme, themes, currentTheme } = useThemeContext();
     const menu = useRef();
     const humbger = useRef();
     function handleMenu(e) {
         if (!showMenu) {
             humbger.current.classList.add("open");
-            showMenu=!showMenu
+            showMenu = !showMenu
             menu.current.classList.add("nav-active");
             menu.current.classList.remove("nav-hidden");
         } else {
-            showMenu=!showMenu
+            showMenu = !showMenu
             humbger.current.classList.remove("open");
             menu.current.classList.add("nav-hidden");
             menu.current.classList.remove("nav-active");
 
         }
     }
+    function changeTheme() {
+        currentTheme.foreground === '#000000' ?
+            setCurrentTheme(themes.dark) :
+            setCurrentTheme(themes.light);
+    }
     return (
         <>
-        <SiBitcoin color="red" />
-            <nav className="main-nav" ref={menu}>
+            <nav className="main-nav" ref={menu} style={currentTheme}>
                 <ul className="list-style-none">
+                    <li>
+                        <label className="switch">
+                            <input
+                                type="checkbox"
+                                onChange={changeTheme}
+                                defaultChecked={false}
+                            />
+                            <span className="slider round"></span>
+                        </label>
+                    </li>
                     <li >
                         <NavLink to="/">
-                            Home
+                            <span>Home</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/buy-crypto">
-                            Buy Crypto
+                        <span>Buy Crypto</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/markets">
-                            Markets
+                            <span>Markets</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/trades">
-                            Trades
+                            <span>Trades</span>
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/account">
-                            Account
+                            <span>Account</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/'>
+                            <span><FiLogOut /></span>
                         </NavLink>
                     </li>
                 </ul>

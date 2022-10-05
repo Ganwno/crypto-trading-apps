@@ -1,39 +1,42 @@
 @import 'config';
 
 .main-nav {
-    background-color: rgb(10, 33, 36);
-    position:absolute;
+    position: absolute;
     top: 0;
-    height: 100%;
-    opacity: 0;
+    height: 99vh;
+    overflow-y: auto;
+    left: -300px;
     @include transition-ease;
+
+    @include scrollbars(10px, linear-gradient(40deg, rgba(70, 158, 151, 0.815), rgba(151, 22, 177, 0.856)), transparent);
 
     ul {
         list-style-type: none;
         margin: auto;
 
         li {
-            border-bottom: 1px solid rgb(255, 255, 255);
+            border-bottom: 1px solid rgb(218, 167, 209);
             padding: 2rem;
 
             a {
                 text-decoration: none;
-                color: white;
+                color: rgba(23, 133, 114, 0.856);
+                @include transition-ease;
+
             }
-            a .active{
-                color: orange;
+
+            &:hover {
+                a {
+                    color: rgb(111, 90, 126);
+                }
             }
         }
     }
 
     &.nav-active {
-        opacity: 1;
+        transform: translateX(300px);
     }
 
-    &.nav-hidden {
-        opacity: 0;
-    }
-    
 }
 
 .menu-btn {
@@ -84,17 +87,86 @@
                     rgb(153, 0, 255), rgb(0, 255, 213), rgb(238, 255, 0));
             @include transition-ease;
         }
-        &.open{
+
+        &.open {
             transform: rotate(0deg);
             background: transparent;
 
-            &::before{
+            &::before {
                 transform: rotate(45deg) translate(5px, 8px);
             }
-            &::after{
+
+            &::after {
                 width: 28px;
                 transform: rotate(-45deg) translate(3px, -7px);
             }
         }
     }
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 1.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        border: none;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #202329;
+        -webkit-transition: .4s;
+        transition: .4s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 1rem;
+            width: 1rem;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .2s;
+        }
+
+        &.round {
+            border-radius: 34px;
+
+            &:before {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    input {
+        &:checked+.slider {
+            background-color: rgb(238, 236, 236);
+        }
+
+        &:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        &:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+            background-color: rgb(18, 27, 48);
+        }
+    }
+
+
 }
