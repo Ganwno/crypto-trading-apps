@@ -1,12 +1,14 @@
 @import 'config';
-
+@import 'home';
+*{
+    @include transition-ease;
+}
 .main-nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 99vh;
     overflow-y: auto;
     left: -300px;
-    @include transition-ease;
 
     @include scrollbars(10px, linear-gradient(40deg, rgba(70, 158, 151, 0.815), rgba(151, 22, 177, 0.856)), transparent);
 
@@ -21,7 +23,6 @@
             a {
                 text-decoration: none;
                 color: rgba(23, 133, 114, 0.856);
-                @include transition-ease;
 
             }
 
@@ -40,7 +41,7 @@
 }
 
 .menu-btn {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     left: 1rem;
     height: 20px;
@@ -49,43 +50,34 @@
     cursor: pointer;
     background-color: transparent;
 
-    @include transition-ease;
-
     &_burger {
-        border-radius: 1px;
+        border-radius: 3px;
         position: absolute;
         right: 0;
         top: 0.5rem;
         width: 28px;
         height: 3px;
-        @include transition-ease;
-        background:
-            linear-gradient(to right,
-                rgb(157, 255, 0), rgb(0, 195, 255));
+        background: rgb(1, 78, 245);
 
         &::before {
             content: '';
             position: absolute;
             top: -8px;
-            border-radius: 1px;
+            border-radius: 3px;
             width: 28px;
             height: 3px;
-            @include transition-ease;
-            background:
-                linear-gradient(to right,
-                    rgb(0, 255, 213), rgb(255, 0, 0), rgb(162, 0, 255));
+            background: rgb(1, 78, 245);
+
         }
 
         &::after {
             content: '';
+            border-radius: 3px;
             position: absolute;
             top: 8px;
             width: 20px;
             height: 3px;
-            background:
-                linear-gradient(to right,
-                    rgb(153, 0, 255), rgb(0, 255, 213), rgb(238, 255, 0));
-            @include transition-ease;
+            background: rgb(1, 78, 245);
         }
 
         &.open {
@@ -103,7 +95,9 @@
         }
     }
 }
-
+p{
+    color: #7a80a0;
+}
 .switch {
     position: relative;
     display: inline-block;
