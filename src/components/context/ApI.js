@@ -6,5 +6,5 @@ export const RANDOMKEYID = "TAPqFAqgMTSpE0xe3zpRlgd405cLIQMGUctl7Evw";
 //     api_secret: 'UxM6nBGvyZQrKnjVmtyoRCto1w4'
 // })
 
-export const NOTRANDOMKEY = "swrFFIXJlFudtF3HkZPtfybDFRTmS7sPwvGUzQ9w";
-export const NOTRANDOMKEYID = "BCrUQVkk80pCdeImSXoKXL5ZCtyyEZwbN7mAb11f";
+export const LOGIN_RANDOMKEY = "swrFFIXJlFudtF3HkZPtfybDFRTmS7sPwvGUzQ9w";
+export const LOGIN_RANDOMKEYID = "BCrUQVkk80pCdeImSXoKXL5ZCtyyEZwbN7mAb11f";

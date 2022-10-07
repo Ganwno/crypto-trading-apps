@@ -7,8 +7,8 @@ export function useLoggedInContext() {
 }
 
 function LoggedInProvider({ children }) {
-    console.log(localStorage.getItem("user"));
-    const [loggedIn, setLoggedIn] = useState(false);
+    const user = JSON.parse(localStorage.getItem("user"))
+    const [loggedIn, setLoggedIn] = useState(user!==null);
     return (
         <loggedInContext.Provider value={{ loggedIn, setLoggedIn }}>
             {children}

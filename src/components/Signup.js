@@ -1,8 +1,9 @@
 import { useThemeContext } from "./context/Theme";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useRef } from "react";
-import { RANDOMKEY, RANDOMKEYID } from "./context/ApI";
 import { useLoggedInContext } from "./context/LoggedInContext";
+
+
 export default function Signup() {
     const { currentTheme } = useThemeContext();
     const { setLoggedIn } = useLoggedInContext();
@@ -13,14 +14,22 @@ export default function Signup() {
     const email = useRef();
     const password1 = useRef();
     const password2 = useRef();
+    // eslint-disable-next-line
     const specialXs = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    // eslint-disable-next-line
     const hasNumber = /\d/;
+
+    const app_id = process.env.REACT_APP_PARSE_APP_ID;
+    const js_key = process.env.REACT_APP_PARSE_JAVASCRIPT_KEY;
+    const host_url = process.env.REACT_APP_PARSE_HOST_URL;
+
+
     function post() {
-        fetch("https://parseapi.back4app.com/users", {
+        fetch(`${host_url}/users`, {
             method: "POST",
             headers: {
-                "X-Parse-Application-Id": RANDOMKEYID,
-                "X-Parse-REST-API-Key": RANDOMKEY,
+                "X-Parse-Application-Id": app_id,
+                "X-Parse-REST-API-Key": js_key,
                 "X-Parse-Revocable-Session": 1,
                 "Content-Type": "application/json"
             },
@@ -33,11 +42,9 @@ export default function Signup() {
         }).then(r => r.json())
             .then(result => {
                 console.log(result);
-                // setLoggedIn(() => true)
-                // navigate("/account")
+                setLoggedIn(() => true)
+                navigate("/account")
                 localStorage.setItem("user", JSON.stringify({
-                    "authData": {},
-                    "username": userName.current.value,
                     "password": password1.current.value,
                     "email": email.current.value,
                     "objectId": result.objectId
@@ -49,6 +56,8 @@ export default function Signup() {
                 console.log(err)
             });
     }
+
+
     return (
         <div className="signup" style={currentTheme}>
             <form>

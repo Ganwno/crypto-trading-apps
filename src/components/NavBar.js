@@ -65,7 +65,10 @@ export default function NavBar() {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to='/' onClick={()=>{setLoggedIn(false)} }>
+                            <NavLink to='/' onClick={() => {
+                                localStorage.clear();
+                                setLoggedIn(false);
+                            }}>
                                 <span><FiLogOut /></span>
                             </NavLink>
                         </li>
