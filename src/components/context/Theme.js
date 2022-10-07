@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useLayoutEffect, useState } from "react";
 
 const themes = {
     light: {
@@ -16,8 +16,13 @@ export function useThemeContext() {
 };
 function ThemeProvider({ children }) {
     const [currentTheme, setCurrentTheme] = useState(themes.light);
+    const changeTheme = () => {
+        currentTheme.foreground === '#000000' ?
+            setCurrentTheme(themes.dark) :
+            setCurrentTheme(themes.light);
+    }
     return (
-        <ThemeContext.Provider value={{ setCurrentTheme, themes, currentTheme }}>
+        <ThemeContext.Provider value={{ changeTheme, currentTheme }}>
             {children}
         </ThemeContext.Provider>
     )

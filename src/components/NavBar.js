@@ -2,9 +2,12 @@ import { NavLink } from "react-router-dom";
 import { useRef } from "react";
 import { FiLogOut } from 'react-icons/fi'
 import { useThemeContext } from "./context/Theme";
+import { useLoggedInContext } from "./context/LoggedInContext";
 let showMenu = false;
 export default function NavBar() {
-    const { setCurrentTheme, themes, currentTheme } = useThemeContext();
+    const { loggedIn } = useLoggedInContext();
+    const { changeTheme, currentTheme } = useThemeContext();
+    const { setLoggedIn } = useLoggedInContext();
     const menu = useRef();
     const humbger = useRef();
     function handleMenu(e) {
@@ -21,11 +24,6 @@ export default function NavBar() {
 
         }
     }
-    function changeTheme() {
-        currentTheme.foreground === '#000000' ?
-            setCurrentTheme(themes.dark) :
-            setCurrentTheme(themes.light);
-    }
     return (
         <>
             <nav className="main-nav" ref={menu} style={currentTheme}>
@@ -34,7 +32,7 @@ export default function NavBar() {
                         <label className="switch">
                             <input
                                 type="checkbox"
-                                onChange={changeTheme}
+                                onChange={() => { changeTheme() }}
                                 defaultChecked={false}
                             />
                             <span className="slider round"></span>
@@ -45,31 +43,37 @@ export default function NavBar() {
                             <span>Home</span>
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/buy-crypto">
-                        <span>Buy Crypto</span>
+                    {loggedIn ? <>
+                        <li>
+                            <NavLink to="/buy-crypto">
+                                <span>Buy Crypto</span>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/markets">
+                                <span>Markets</span>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/trades">
+                                <span>Trades</span>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/account">
+                                <span>Account</span>
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/' onClick={()=>{setLoggedIn(false)} }>
+                                <span><FiLogOut /></span>
+                            </NavLink>
+                        </li>
+                    </> : <li>
+                        <NavLink to='/login'>
+                            <span>Login</span>
                         </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/markets">
-                            <span>Markets</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/trades">
-                            <span>Trades</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/account">
-                            <span>Account</span>
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/'>
-                            <span><FiLogOut /></span>
-                        </NavLink>
-                    </li>
+                    </li>}
                 </ul>
             </nav>
             <div className="menu-btn" onClick={handleMenu}>

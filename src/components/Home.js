@@ -2,10 +2,13 @@ import { useThemeContext } from "./context/Theme"
 import { TiChartPie } from 'react-icons/ti'
 import { RiLock2Line } from 'react-icons/ri'
 import { AiOutlineMobile } from 'react-icons/ai';
+import { SiBitcoincash } from 'react-icons/si';
 import { BsEmojiAngry, BsEmojiExpressionless, BsFillEmojiSunglassesFill, BsEmojiHeartEyes } from 'react-icons/bs';
+import { useNavigate } from "react-router";
 
 export default function Home() {
     const { currentTheme } = useThemeContext();
+    const navigate = useNavigate();
     return (
         <div style={currentTheme} className="home">
             <div className="start-trading">
@@ -14,7 +17,7 @@ export default function Home() {
                     <p>Crypto-Trade is the easiest place to buy and sell cryptocurrency.<br />
                         Sign up and get started today.
                     </p>
-                    <button>Start trading</button>
+                    <button onClick={()=>navigate("/login")}>Start trading</button>
                 </div>
                 <img src="https://rockiereact.surielementor.com/static/media/banner-03.e73e194292317d284a55.png" alt="crypto-trade handshake" />
             </div>
@@ -53,14 +56,32 @@ export default function Home() {
                     </ul>
                 </div>
                 <div className="crypto-experience">
-                    <div className="emojis">
-                        <BsEmojiAngry className="emoji" />
-                        <BsEmojiExpressionless className="emoji" />
-                        <BsFillEmojiSunglassesFill className="emoji" />
-                        <BsEmojiHeartEyes className="emoji" />
+                    <div className="experience" style={currentTheme}>
+                        <p><small>How was your experience?</small></p>
+                        <div className="emojis">
+                            <BsEmojiAngry className="emoji" />
+                            <BsEmojiExpressionless className="emoji" />
+                            <BsFillEmojiSunglassesFill className="emoji" />
+                            <BsEmojiHeartEyes className="emoji" />
+                        </div>
+                    </div>
+                    <div className="user-card">
+                        <div className="info">
+                            <img src="https://rockiereact.surielementor.com/static/media/user.50ae0b5cba24500443ed.jpg" alt="userAvater" />
+                            <p>Esther Howard<br /><small>estherhoward01@gmail.com</small></p>
+                            <div className="portfolio">
+                                <h2>Portfolio</h2>
+                                <SiBitcoincash className="btc-icon" />
+                                <p><small>Balance</small></p>
+                                <h3><strong>$2,509.75</strong></h3><small className="percent">+9.77%</small>
+                                <button onClick={()=>navigate("/account")}>Deposit</button>
+                                <button onClick={()=>navigate("/account")}>Withdraw</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div></div>
         </div>
     )
 }

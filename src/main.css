@@ -1,6 +1,8 @@
 .home {
+  width: auto;
   align-items: center;
   padding: 1rem;
+  margin: 0;
 }
 .home .start-trading {
   text-align: center;
@@ -13,14 +15,18 @@
   border: none;
   border-radius: 2rem;
 }
+.home .start-trading img {
+  width: 90vw;
+}
 .home .crypto-main {
   cursor: pointer;
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
 }
-.home .crypto-main ul {
+.home .crypto-main .why-content ul {
   list-style: none;
 }
-.home .crypto-main ul li {
+.home .crypto-main .why-content ul li {
   display: flex;
   align-items: center;
   border-radius: 16px;
@@ -29,38 +35,296 @@
   max-width: -moz-max-content;
   max-width: max-content;
 }
-.home .crypto-main ul li .icon-div {
+.home .crypto-main .why-content ul li .icon-div {
   background-color: rgba(128, 133, 202, 0.671);
   border-radius: 10px;
   padding: 0rem 0.7rem;
 }
-.home .crypto-main ul li * {
+.home .crypto-main .why-content ul li * {
   margin: 1rem 0.5rem;
 }
-.home .crypto-main ul li:hover {
+.home .crypto-main .why-content ul li:hover {
   background-color: rgba(208, 242, 252, 0.801);
   box-shadow: 0 14px 64px 0 hsla(0deg, 0%, 6%, 0.1);
 }
-.home .crypto-experience .emojis {
-  display: inline-block;
+.home .crypto-main .crypto-experience {
+  width: 50%;
+}
+.home .crypto-main .crypto-experience .experience {
+  width: 400px;
+  border-radius: 19px;
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.home .crypto-main .crypto-experience .experience:hover {
+  box-shadow: 0 14px 64px 0 hsla(0deg, 0%, 6%, 0.1);
+}
+.home .crypto-main .crypto-experience .experience .emojis {
+  margin: 1.5rem 0rem;
+  display: flex;
+}
+.home .crypto-main .crypto-experience .experience .emojis .emoji {
+  font-size: 3.5rem;
+  letter-spacing: 1rem;
+  padding: 0.423rem;
+}
+.home .crypto-main .crypto-experience .experience .emojis .emoji:hover {
+  color: rgb(108, 75, 139);
+}
+.home .crypto-main .crypto-experience .user-card {
+  margin-top: 1rem;
+  background-color: white;
+  border-radius: 16px;
+  padding: 1.7rem;
+}
+.home .crypto-main .crypto-experience .user-card .portfolio {
+  text-align: left;
+  padding: 1rem;
+  color: whitesmoke;
+  border-radius: 10px;
+  background: linear-gradient(20deg, rgb(66, 7, 90), rgb(60, 7, 173));
+}
+.home .crypto-main .crypto-experience .user-card .portfolio .btc-icon {
+  position: absolute;
+  font-size: 20px;
+  margin-top: -40px;
+  margin-left: 350px;
+  text-shadow: 2px 2px 1px black;
+}
+.home .crypto-main .crypto-experience .user-card .portfolio .percent {
+  position: absolute;
+  margin-top: -36px;
+  margin-left: 100px;
+}
+.home .crypto-main .crypto-experience .user-card .portfolio button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin-right: 0.7rem;
+  border-color: white;
+  background-color: transparent;
+  color: white;
+}
+.home .crypto-main .crypto-experience .user-card .portfolio button:hover {
+  background-color: white;
+  color: rgb(1, 78, 245);
 }
 
-@media (max-width: 1050px) {
-  * {
-    max-width: 99vw;
+@media only screen and (max-width: 850px) {
+  .home .crypto-main {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  .home .crypto-main .why-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
+  .home .crypto-main .crypto-experience {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home .crypto-main .crypto-experience .experience {
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+  }
+  .home .crypto-main .crypto-experience .experience .emojis {
+    margin: 0;
+  }
+  .home .crypto-main .crypto-experience .experience .emoji {
+    font-size: 1px;
+  }
+  .home .crypto-main .crypto-experience .user-card {
+    width: 70vw;
+  }
+  .home .crypto-main .crypto-experience .user-card .portfolio .btc-icon {
+    position: absolute;
+    margin-left: 50vw;
   }
 }
-@media (max-width: 350) {
-  * {
-    max-width: 99vw;
-    flex-wrap: wrap;
+@media only screen and (max-width: 490) {
+  .home .crypto-main .crypto-experience .experience {
+    width: 370px;
   }
-  .home {
-    width: 100vw;
+  .home .crypto-main .crypto-experience .experience .emojis {
+    max-width: 350px;
   }
 }
-* {
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal .modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.modal .modal-content .close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Modal Content */
+/* The Close Button */
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100vw;
+  min-height: 100vh;
+}
+.login form {
+  display: block;
+}
+.login form * {
+  margin: 1rem 2rem 0rem 0rem;
+  padding: 0.5rem 1rem;
+}
+.login form input {
+  border: none;
+  background-color: transparent;
+  border-bottom: solid 1.5px rgb(10, 50, 136);
+  color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, rgb(124, 43, 216), rgba(22, 17, 46, 0.473));
+}
+.login form input::-moz-placeholder {
+  color: rgb(255, 255, 255);
+}
+.login form input:-ms-input-placeholder {
+  color: rgb(255, 255, 255);
+}
+.login form input::placeholder {
+  color: rgb(255, 255, 255);
+}
+.login form input:focus {
+  outline: none;
+}
+.login form button {
+  display: block;
+  border-radius: 1rem;
+  border-color: rgb(1, 78, 245);
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100vw;
+  min-height: 100vh;
+}
+.signup form {
+  display: block;
+}
+.signup form div {
+  margin: 0.2rem 2rem 0rem 0rem;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+.signup form div label {
+  display: block;
+}
+.signup form div input {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: transparent;
+  border-bottom: solid 1.5px rgb(10, 50, 136);
+  color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, rgb(124, 43, 216), rgba(99, 14, 148, 0.473));
+}
+.signup form div input::-moz-placeholder {
+  color: rgb(255, 255, 255);
+}
+.signup form div input:-ms-input-placeholder {
+  color: rgb(255, 255, 255);
+}
+.signup form div input::placeholder {
+  color: rgb(255, 255, 255);
+}
+.signup form div input:focus {
+  outline: none;
+}
+.signup form .signbutton {
+  display: block;
+  border-radius: 1rem;
+  border-color: rgb(1, 78, 245);
+  padding: 0.5rem 1rem;
+}
+
+*:not(p, h1, h2, h3, h4) {
   transition: all 0.4s ease-in-out;
+  max-width: 100vw;
+}
+
+a {
+  color: rgb(111, 90, 126);
+}
+
+input::-moz-placeholder {
+  opacity: 0.5;
+}
+
+input:-ms-input-placeholder {
+  opacity: 0.5;
+}
+
+input::placeholder {
+  opacity: 0.5;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(40deg, rgba(70, 158, 151, 0.815), rgba(151, 22, 177, 0.856));
+  border-radius: 9px;
+}
+body::-webkit-scrollbar-track {
+  background: rgb(1, 78, 245);
+}
+body {
+  scrollbar-face-color: linear-gradient(40deg, rgba(70, 158, 151, 0.815), rgba(151, 22, 177, 0.856));
+  scrollbar-track-color: rgb(1, 78, 245);
 }
 
 .main-nav {
@@ -71,8 +335,8 @@
   left: -300px;
 }
 .main-nav::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
 }
 .main-nav::-webkit-scrollbar-thumb {
   background: linear-gradient(40deg, rgba(70, 158, 151, 0.815), rgba(151, 22, 177, 0.856));
