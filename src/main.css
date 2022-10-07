@@ -3,6 +3,7 @@
   align-items: center;
   padding: 1rem;
   margin: 0;
+  min-height: 100vh;
 }
 .home .start-trading {
   text-align: center;
@@ -169,17 +170,18 @@
   }
 }
 .modal {
-  display: block; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: block;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .modal .modal-content {
   background-color: #fefefe;
@@ -194,11 +196,7 @@
   font-size: 28px;
   font-weight: bold;
 }
-
-/* Modal Content */
-/* The Close Button */
-.close:hover,
-.close:focus {
+.modal .modal-content .close:hover, .modal .modal-content .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -240,8 +238,6 @@
 }
 .login form button {
   display: block;
-  border-radius: 1rem;
-  border-color: rgb(1, 78, 245);
 }
 
 .signup {
@@ -288,6 +284,119 @@
   border-radius: 1rem;
   border-color: rgb(1, 78, 245);
   padding: 0.5rem 1rem;
+  background-color: transparent;
+}
+
+.account {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.account * {
+  margin: 1rem auto;
+}
+.account .avator {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: url("https://rockiereact.surielementor.com/static/media/user.50ae0b5cba24500443ed.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.account .uploadUrl {
+  display: block;
+  border-radius: 1rem;
+  border-color: rgb(173, 0, 0);
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+}
+.account .imgUrl,
+.account .updateUrl {
+  display: none;
+}
+.account .imgUrl.open,
+.account .updateUrl.open {
+  display: block;
+}
+
+.coinCard {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+}
+.coinCard * {
+  margin-top: 1rem;
+}
+
+.buy-crypto {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+.buy-crypto .all-coins-container {
+  width: 100vw;
+  margin: 0;
+  text-align: center;
+}
+.buy-crypto .all-coins-container .coin-container {
+  display: inline-block;
+  margin: auto;
+  padding: 0.5rem 1rem;
+}
+.buy-crypto .all-coins-container .coin-container button {
+  margin: 1rem auto auto auto;
+  width: 6rem;
+}
+
+.markets {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+.markets .title {
+  text-align: center;
+  padding-top: 3rem;
+  background: linear-gradient(180deg, transparent, rgba(109, 9, 240, 0.521), rgba(72, 18, 158, 0.836)), url("https://rockiereact.surielementor.com/static/media/banner-04.543529f8ea7cfb150846.png");
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100vw;
+}
+.markets .market-data {
+  width: 99vw;
+  cursor: pointer;
+  border-collapse: collapse;
+}
+.markets .market-data tr {
+  max-width: 99vw;
+  border: none;
+  background: linear-gradient(180deg, rgb(91, 14, 163), transparent);
+}
+.markets .market-data tr td,
+.markets .market-data tr th {
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 0.6rem;
+  border: none;
+  padding-bottom: 0.6rem;
+}
+.markets .market-data tr .explore a {
+  text-decoration: none;
+  color: rgb(124, 124, 124);
+}
+.markets .market-data tr:hover .explore:hover {
+  background: linear-gradient(0deg, rgba(178, 0, 202, 0.774), transparent);
+}
+.markets .market-data tr:hover .explore:hover a {
+  color: white;
+}
+.markets p {
+  text-align: center;
 }
 
 *:not(p, h1, h2, h3, h4) {
@@ -309,6 +418,48 @@ input:-ms-input-placeholder {
 
 input::placeholder {
   opacity: 0.5;
+}
+
+button {
+  border-radius: 1rem;
+  border-color: rgb(1, 78, 245);
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+button:hover {
+  border-color: rgb(0, 49, 155);
+  border-radius: 0.85rem;
+  box-shadow: 1px 1px 3px rgba(18, 27, 48, 0.274);
+}
+button:active {
+  border-radius: 1rem;
+  border-color: rgb(1, 78, 245);
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: transparent;
+  border-bottom: solid 1.5px rgb(10, 50, 136);
+  color: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  background: linear-gradient(90deg, rgb(124, 43, 216), rgba(99, 14, 148, 0.473));
+}
+input::-moz-placeholder {
+  color: rgb(255, 255, 255);
+}
+input:-ms-input-placeholder {
+  color: rgb(255, 255, 255);
+}
+input::placeholder {
+  color: rgb(255, 255, 255);
+}
+input:focus {
+  outline: none;
 }
 
 body::-webkit-scrollbar {
@@ -470,4 +621,72 @@ p {
 .switch input:checked + .slider:before {
   transform: translateX(26px);
   background-color: rgb(18, 27, 48);
+}
+
+.back-btn {
+  position: fixed;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  background-color: #0055ff;
+  display: block;
+}
+
+table {
+  display: flexbox;
+  width: 100vw;
+}
+table th {
+  background-color: rgba(124, 136, 252, 0.3);
+}
+table tr,
+table td,
+table th {
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+table tr button,
+table td button,
+table th button {
+  position: absolute;
+  display: block;
+  margin-top: -19px;
+  padding-top: 0.4rem;
+  margin-left: 30vw;
+}
+table tr button.buy,
+table td button.buy,
+table th button.buy {
+  margin-left: 20vw;
+}
+@media (max-width: 700px) {
+  table tr {
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    border: none;
+    margin: 0;
+    width: 100vw;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgb(0, 26, 255);
+  }
+  table tr td,
+table tr th {
+    width: 100vw;
+    display: block;
+    margin: auto;
+    border: none;
+    text-align: center;
+  }
+  table tr td button,
+table tr th button {
+    display: flexbox;
+    position: relative;
+    margin: auto;
+  }
+  table tr th {
+    font-weight: 300;
+    padding: -11px;
+  }
 }/*# sourceMappingURL=main.css.map */

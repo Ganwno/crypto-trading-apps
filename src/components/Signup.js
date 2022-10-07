@@ -25,7 +25,7 @@ export default function Signup() {
 
 
     function post() {
-        fetch(`${host_url}/users`, {
+        fetch(`https://parseapi.back4app.com/users`, {
             method: "POST",
             headers: {
                 "X-Parse-Application-Id": app_id,
@@ -35,6 +35,7 @@ export default function Signup() {
             },
             body: JSON.stringify({
                 "authData": {},
+                "boughtCoins": [{ coin: "bitcoin", amount: 0 }],
                 "username": userName.current.value,
                 "password": password1.current.value,
                 "email": email.current.value
@@ -51,7 +52,7 @@ export default function Signup() {
                 }))
             })
             .catch(err => {
-                console.log(typeof err)
+                console.log(err)
                 // err.code === 203 ? (alert("Acount Already Exists For " + email.current.value)) : null;
                 console.log(err)
             });

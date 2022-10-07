@@ -5,10 +5,19 @@ import { AiOutlineMobile } from 'react-icons/ai';
 import { SiBitcoincash } from 'react-icons/si';
 import { BsEmojiAngry, BsEmojiExpressionless, BsFillEmojiSunglassesFill, BsEmojiHeartEyes } from 'react-icons/bs';
 import { useNavigate } from "react-router";
+import { useLoggedInContext } from "./context/LoggedInContext";
 
 export default function Home() {
     const { currentTheme } = useThemeContext();
+    const {loggedIn} =useLoggedInContext();
     const navigate = useNavigate();
+    const user = JSON.parse(localStorage.getItem("user"));
+    let userNameHolder = "Esther Howard";
+    let userEmailHolder = "estherhoward01@gmail.com";
+    if(localStorage.getItem("user")!==null){
+        userNameHolder = user.username;
+        userEmailHolder = user.email;
+    }
     return (
         <div style={currentTheme} className="home">
             <div className="start-trading">
@@ -17,7 +26,7 @@ export default function Home() {
                     <p>Crypto-Trade is the easiest place to buy and sell cryptocurrency.<br />
                         Sign up and get started today.
                     </p>
-                    <button onClick={()=>navigate("/login")}>Start trading</button>
+                    <button onClick={()=>navigate(loggedIn ?"/buy-crypto":"/login")}>{loggedIn ?"Buy":"Start trading"}</button>
                 </div>
                 <img src="https://rockiereact.surielementor.com/static/media/banner-03.e73e194292317d284a55.png" alt="crypto-trade handshake" />
             </div>
@@ -68,14 +77,14 @@ export default function Home() {
                     <div className="user-card">
                         <div className="info">
                             <img src="https://rockiereact.surielementor.com/static/media/user.50ae0b5cba24500443ed.jpg" alt="userAvater" />
-                            <p>Esther Howard<br /><small>estherhoward01@gmail.com</small></p>
+                            <p>{userNameHolder}<br /><small>{userEmailHolder}</small></p>
                             <div className="portfolio">
                                 <h2>Portfolio</h2>
                                 <SiBitcoincash className="btc-icon" />
                                 <p><small>Balance</small></p>
                                 <h3><strong>$2,509.75</strong></h3><small className="percent">+9.77%</small>
-                                <button onClick={()=>navigate("/account")}>Deposit</button>
-                                <button onClick={()=>navigate("/account")}>Withdraw</button>
+                                <button onClick={()=>navigate("/account")}>Buy More</button>
+                                <button onClick={()=>navigate("/account")}>Sell</button>
                             </div>
                         </div>
                     </div>

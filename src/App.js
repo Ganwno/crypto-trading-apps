@@ -5,8 +5,8 @@ import { BrowserRouter } from 'react-router-dom';
 import Body from './components/Body';
 import { ThemeProvider } from './components/context/Theme';
 import { LoggedInProvider } from './components/context/LoggedInContext';
-import {Parse} from 'parse';
 function App() {
+
   return (
 
     <ThemeProvider>

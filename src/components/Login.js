@@ -4,22 +4,19 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useLoggedInContext } from "./context/LoggedInContext";
 import Parse from "parse";
 export default function Login() {
+    const { currentTheme } = useThemeContext();
+    const navigate = useNavigate();
+    
+    Parse.initialize(
+        '6x0wgYd99Tukds3wL4FVeUIR3LG3MuVAMWmjUFsI', // This is your Application ID
+        'puLScGf62dABq7n5OGKI0biH0tMPFMWZQIT5Nvxk', // This is your Javascript key
+        'gZuYmhXEsEoPIzPNsuNtAa7m21knsAFKxsXz1nKz' // This is your Master key (never use it in the frontend)
+    );
+    //Point to Back4App Parse API address 
+    Parse.serverURL = 'https://parseapi.back4app.com'
     const username = useRef();
     const password = useRef();
     const { setLoggedIn } = useLoggedInContext();
-    const { currentTheme } = useThemeContext();
-    const navigate = useNavigate();
-
-    const app_id = process.env.REACT_APP_PARSE_APP_ID;
-    const js_key = process.env.REACT_APP_PARSE_JAVASCRIPT_KEY;
-    const host_url = process.env.REACT_APP_PARSE_HOST_URL;
-
-    Parse.initialize(
-        app_id, // This is your Application ID
-        js_key // This is your Javascript key
-    );
-    Parse.serverURL = host_url;
-    
 
 
     return (

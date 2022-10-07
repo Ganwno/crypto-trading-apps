@@ -3,17 +3,65 @@
 @import './scss/notLoggedIn';
 @import './scss/login';
 @import './scss/signup';
+@import './scss/account';
+@import './scss/coincard';
+@import './scss/buycrypto';
+@import './scss/markets';
 
-*:not(p,h1,h2,h3,h4) {
+*:not(p, h1, h2, h3, h4) {
     @include transition-ease;
     max-width: 100vw;
 }
+
 a {
     color: rgb(111, 90, 126);
 }
-input::placeholder{
+
+input::placeholder {
     opacity: 0.5;
 }
+
+button {
+    border-radius: 1rem;
+    border-color: rgb(1, 78, 245);
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition:  all 0.1s ease-in-out;
+    &:hover {
+        border-color: rgb(0, 49, 155);
+        border-radius: 0.85rem;
+        box-shadow: 1px 1px 3px rgba(18, 27, 48, 0.274);
+    }
+
+    &:active {
+
+        border-radius: 1rem;
+        border-color: rgb(1, 78, 245);
+        padding: 0.5rem 1rem;
+        background-color: transparent;
+    }
+}
+
+input {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
+    border-bottom: solid 1.5px rgb(10, 50, 136);
+    color: rgb(255, 255, 255);
+    border-radius: 0.5rem;
+    background: linear-gradient(90deg,
+            rgb(124, 43, 216), rgba(99, 14, 148, 0.473));
+
+    &::placeholder {
+        color: rgb(255, 255, 255);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
 body {
     @include scrollbars(10px, linear-gradient(40deg, rgba(70, 158, 151, 0.815), rgba(151, 22, 177, 0.856)), rgb(1, 78, 245));
 }
@@ -47,6 +95,7 @@ body {
             }
         }
     }
+
     &.nav-active {
         transform: translateX(300px);
     }
@@ -178,4 +227,75 @@ p {
     }
 
 
+}
+
+.back-btn {
+    position: fixed;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: #0055ff;
+    display: block;
+}
+
+table {
+    display: flexbox;
+    width: 100vw;
+
+    th {
+        background-color: rgba(124, 136, 252, 0.3);
+    }
+
+    tr,
+    td,
+    th {
+        border-top: 1px solid;
+        border-left: 1px solid;
+
+        button {
+            position: absolute;
+            display: block;
+            margin-top: -19px;
+            padding-top: 0.4rem;
+            margin-left: 30vw;
+
+            &.buy {
+                margin-left: 20vw;
+            }
+        }
+    }
+
+    tr {
+        @media (max-width:700px) {
+            text-align: center;
+            flex-direction: column;
+            display: flex;
+            border: none;
+            margin: 0;
+            width: 100vw;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid rgb(0, 26, 255);
+
+            td,
+            th {
+                width: 100vw;
+                display: block;
+                margin: auto;
+                border: none;
+                text-align: center;
+
+                button {
+                    display: flexbox;
+                    position: relative;
+                    margin: auto;
+                }
+            }
+
+            th {
+                font-weight: 300;
+                padding: -11px;
+            }
+        }
+    }
 }

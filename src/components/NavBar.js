@@ -1,13 +1,15 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useRef } from "react";
-import { FiLogOut } from 'react-icons/fi'
+import { FiLogOut } from 'react-icons/fi';
 import { useThemeContext } from "./context/Theme";
 import { useLoggedInContext } from "./context/LoggedInContext";
+import { IoIosArrowBack } from 'react-icons/io';
 let showMenu = false;
 export default function NavBar() {
     const { loggedIn } = useLoggedInContext();
     const { changeTheme, currentTheme } = useThemeContext();
     const { setLoggedIn } = useLoggedInContext();
+    const navigate = useNavigate();
     const menu = useRef();
     const humbger = useRef();
     function handleMenu(e) {
@@ -26,7 +28,8 @@ export default function NavBar() {
     }
     return (
         <>
-            <nav className="main-nav" ref={menu} style={currentTheme}>
+            <nav
+                className="main-nav" ref={menu} style={currentTheme}>
                 <ul className="list-style-none">
                     <li>
                         <label className="switch">
@@ -39,28 +42,28 @@ export default function NavBar() {
                         </label>
                     </li>
                     <li >
-                        <NavLink to="/">
+                        <NavLink to="/" onClick={handleMenu}>
                             <span>Home</span>
                         </NavLink>
                     </li>
                     {loggedIn ? <>
                         <li>
-                            <NavLink to="/buy-crypto">
+                            <NavLink to="/buy-crypto" onClick={handleMenu}>
                                 <span>Buy Crypto</span>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/markets">
+                            <NavLink to="/markets" onClick={handleMenu}>
                                 <span>Markets</span>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/trades">
+                            <NavLink to="/trades" onClick={handleMenu}>
                                 <span>Trades</span>
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/account">
+                            <NavLink to="/account" onClick={handleMenu}>
                                 <span>Account</span>
                             </NavLink>
                         </li>
@@ -73,7 +76,7 @@ export default function NavBar() {
                             </NavLink>
                         </li>
                     </> : <li>
-                        <NavLink to='/login'>
+                        <NavLink to='/login' onClick={handleMenu}>
                             <span>Login</span>
                         </NavLink>
                     </li>}
@@ -82,6 +85,10 @@ export default function NavBar() {
             <div className="menu-btn" onClick={handleMenu}>
                 <span className="menu-btn_burger" ref={humbger}></span>
             </div>
+            {/* very cool functionality
+            <div onClick={() => { navigate() }} className="back-btn" onClick={handleMenu} style={currentTheme}>
+                <IoIosArrowBack fontSize={"2rem"} />
+            </div> */}
         </>
     )
 }
