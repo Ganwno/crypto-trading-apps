@@ -1,9 +1,7 @@
-import { useNavigate } from "react-router";
 import { useThemeContext } from "./context/Theme"
 
 export default function Coincard({ coin }) {
     const { currentTheme } = useThemeContext();
-    const navigate = useNavigate();
     const changePercent = parseFloat(coin.changePercent24Hr).toFixed(2);
     console.log(coin);
     return (

@@ -14,9 +14,11 @@ export default function Home() {
     const user = JSON.parse(localStorage.getItem("user"));
     let userNameHolder = "Esther Howard";
     let userEmailHolder = "estherhoward01@gmail.com";
+    let imageUrl = "https://rockiereact.surielementor.com/static/media/user.50ae0b5cba24500443ed.jpg"
     if(localStorage.getItem("user")!==null){
         userNameHolder = user.username;
         userEmailHolder = user.email;
+        imageUrl = user.avatar_url;
     }
     return (
         <div style={currentTheme} className="home">
@@ -76,7 +78,7 @@ export default function Home() {
                     </div>
                     <div className="user-card">
                         <div className="info">
-                            <img src="https://rockiereact.surielementor.com/static/media/user.50ae0b5cba24500443ed.jpg" alt="userAvater" />
+                            <img src={imageUrl} style={{width:"100px",height:"auto", borderRadius:"100px"}} alt="userAvater" />
                             <p>{userNameHolder}<br /><small>{userEmailHolder}</small></p>
                             <div className="portfolio">
                                 <h2>Portfolio</h2>

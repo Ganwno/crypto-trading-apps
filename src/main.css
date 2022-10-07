@@ -318,6 +318,11 @@
 .account .updateUrl.open {
   display: block;
 }
+.account table button {
+  position: absolute;
+  margin-top: -1rem;
+  margin-left: 30vw;
+}
 
 .coinCard {
   display: flex;
@@ -397,6 +402,14 @@
 }
 .markets p {
   text-align: center;
+}
+
+.trades {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
 }
 
 *:not(p, h1, h2, h3, h4) {

@@ -21,7 +21,6 @@ export default function Signup() {
 
     const app_id = process.env.REACT_APP_PARSE_APP_ID;
     const js_key = process.env.REACT_APP_PARSE_JAVASCRIPT_KEY;
-    const host_url = process.env.REACT_APP_PARSE_HOST_URL;
 
 
     function post() {
@@ -80,17 +79,17 @@ export default function Signup() {
                     onClick={(e) => {
                         e.preventDefault();
                         if (
-                            // fName.current.value !== "" &&
-                            // lName.current.value !== "" &&
-                            // userName.current.value !== "" &&
-                            // password1.current.value === password2.current.value &&
-                            // password1.current.value.length > 7 &&
-                            // specialXs.test(password1.current.value) &&
+                            fName.current.value !== "" &&
+                            lName.current.value !== "" &&
+                            userName.current.value !== "" &&
+                            password1.current.value === password2.current.value &&
+                            password1.current.value.length > 7 &&
+                            specialXs.test(password1.current.value) &&
                             hasNumber.test(password1.current.value)) {
                             post()
                             console.log("Signed")
-                            // setLoggedIn(() => true)
-                            // navigate("/account")
+                            setLoggedIn(() => true)
+                            navigate("/account")
                         }
                         else {
                             alert("Wrong input... Try again \n :)")

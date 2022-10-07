@@ -1,4 +1,4 @@
-import { Outlet, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Coincard from "./Coincard";
 import { useThemeContext } from "./context/Theme";
 
@@ -11,7 +11,7 @@ export default function Markets({ allCoins }) {
     let amountX = "";
     if (coinAndPrice) {
         console.log(coinAndPrice);
-        str = (coinAndPrice.split("$"));
+        str = (coinAndPrice.split(".Cur."));
         coinX = str[0];
         amountX = str[1];
     }
@@ -42,8 +42,8 @@ export default function Markets({ allCoins }) {
                 </tbody>
 
             </table>
-            {coinAndPrice && <>
-                <button style={currentTheme} onClick={() => { navigate("/trades/" + coinAndPrice) }}>Proceed</button>
+            {allCoins.find(coin => coin.name === coinX) && <>
+                <button style={currentTheme} onClick={() => { navigate("/trades/" + allCoins.find(coin => coin.name === coinX).symbol+".Cur."+amountX) }}>Proceed</button>
                 <p>Click the button above to proceed buying <strong>{coinX}</strong> <br />
                     from a trader</p>
             </>}

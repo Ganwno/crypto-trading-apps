@@ -1,15 +1,14 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useRef } from "react";
 import { FiLogOut } from 'react-icons/fi';
 import { useThemeContext } from "./context/Theme";
 import { useLoggedInContext } from "./context/LoggedInContext";
-import { IoIosArrowBack } from 'react-icons/io';
+
 let showMenu = false;
 export default function NavBar() {
     const { loggedIn } = useLoggedInContext();
     const { changeTheme, currentTheme } = useThemeContext();
     const { setLoggedIn } = useLoggedInContext();
-    const navigate = useNavigate();
     const menu = useRef();
     const humbger = useRef();
     function handleMenu(e) {
@@ -69,7 +68,7 @@ export default function NavBar() {
                         </li>
                         <li>
                             <NavLink to='/' onClick={() => {
-                                localStorage.clear();
+                                localStorage.removeItem("user");
                                 setLoggedIn(false);
                             }}>
                                 <span><FiLogOut /></span>
@@ -85,10 +84,6 @@ export default function NavBar() {
             <div className="menu-btn" onClick={handleMenu}>
                 <span className="menu-btn_burger" ref={humbger}></span>
             </div>
-            {/* very cool functionality
-            <div onClick={() => { navigate() }} className="back-btn" onClick={handleMenu} style={currentTheme}>
-                <IoIosArrowBack fontSize={"2rem"} />
-            </div> */}
         </>
     )
 }

@@ -3,10 +3,10 @@ import { useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useLoggedInContext } from "./context/LoggedInContext";
 import Parse from "parse";
-export default function Login() {
+export default function Login({ setuserData }) {
     const { currentTheme } = useThemeContext();
     const navigate = useNavigate();
-    
+
     Parse.initialize(
         '6x0wgYd99Tukds3wL4FVeUIR3LG3MuVAMWmjUFsI', // This is your Application ID
         'puLScGf62dABq7n5OGKI0biH0tMPFMWZQIT5Nvxk', // This is your Javascript key
@@ -32,7 +32,8 @@ export default function Login() {
                         try {
                             // Pass the username and password to logIn function
                             let user = await Parse.User.logIn(username.current.value, password.current.value);
-                            localStorage.setItem("user", JSON.stringify(user.attributes))
+                            localStorage.setItem("user", JSON.stringify(user.attributes));
+                            setuserData(() => user.attributes);
                             setLoggedIn(true);
                             navigate("/account")
                         } catch (error) {

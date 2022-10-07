@@ -7,6 +7,8 @@
 @import './scss/coincard';
 @import './scss/buycrypto';
 @import './scss/markets';
+@import './scss/trades';
+
 
 *:not(p, h1, h2, h3, h4) {
     @include transition-ease;
@@ -27,7 +29,8 @@ button {
     padding: 0.5rem 1rem;
     background-color: transparent;
     cursor: pointer;
-    transition:  all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+
     &:hover {
         border-color: rgb(0, 49, 155);
         border-radius: 0.85rem;

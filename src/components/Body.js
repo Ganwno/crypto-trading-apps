@@ -12,7 +12,8 @@ import CoinBuycard from './CoinBuycard';
 import { useEffect, useState } from 'react';
 export default function Body() {
     const { loggedIn } = useLoggedInContext();
-    const [allCoins, setallCoins] = useState([])
+    const [allCoins, setallCoins] = useState([]);
+    const [userData, setuserData] = useState({});
     useEffect(() => {
         fetch("https://api.coincap.io/v2/assets")
             .then(r => r.json())
@@ -30,12 +31,14 @@ export default function Body() {
                     <Route path='/buy-crypto/:coin' element={<CoinBuycard allCoins={allCoins} />} />
                 </Route>
                 <Route path='/markets' element={loggedIn ? <Markets allCoins={allCoins} /> : <NotLoggedIn />}>
-                    <Route path='/markets/:coinAndPrice'  />
+                    <Route path='/markets/:coinAndPrice' />
                 </Route>
-                <Route path='/trades' element={loggedIn ? <Trades /> : <NotLoggedIn />} />
-                <Route path='/account' element={loggedIn ? <Account allCoins={allCoins} /> : <NotLoggedIn />} />
+                <Route path='/trades' element={loggedIn ? <Trades setuserData={setuserData} userData={userData} /> : <NotLoggedIn />}>
+                    <Route path='/trades/:coinAndPrice' />
+                </Route>
+                <Route path='/account' element={loggedIn ? <Account allCoins={allCoins} setuserData={setuserData} userData={userData} /> : <NotLoggedIn />} />
 
-                <Route path='/login' element={<Login />} />
+                <Route path='/login' element={<Login setuserData={setuserData}/>} />
                 <Route path='/signup' element={<Signup />} />
             </Routes>
         </div>

@@ -19,7 +19,7 @@ export default function CoinBuycard({ allCoins }) {
                     <p>$ {parseFloat(coinLooked.priceUsd).toFixed(2)} per 1 {coinLooked.symbol}<small></small></p>
                     <input type="number" onChange={calc} />
                     <p>$ {parseFloat(totalBuy).toFixed(2) > 0 ? parseFloat(totalBuy).toFixed(2) : 0}</p>
-                    <button onClick={() => { totalBuy !== "" && totalBuy > 0 && navigate("/markets/"+coinLooked.name+"$"+totalBuy) }} style={currentTheme}>Buy</button>
+                    <button onClick={() => { totalBuy !== "" && totalBuy > 0 && navigate("/markets/"+coinLooked.name+".Cur."+totalBuy/parseFloat(coinLooked.priceUsd)) }} style={currentTheme}>Buy</button>
                 </div> :
                 <div className="coinCard">
                     <h3>Sorry,</h3>
