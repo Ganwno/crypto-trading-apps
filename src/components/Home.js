@@ -85,8 +85,8 @@ export default function Home() {
                                 <SiBitcoincash className="btc-icon" />
                                 <p><small>Balance</small></p>
                                 <h3><strong>$2,509.75</strong></h3><small className="percent">+9.77%</small>
-                                <button onClick={()=>navigate("/account")}>Buy More</button>
-                                <button onClick={()=>navigate("/account")}>Sell</button>
+                                <button onClick={()=>navigate(loggedIn?"/buy-crypto":"/login")}>Buy More</button>
+                                <button onClick={()=>navigate(loggedIn?"/account":"/login")}>Sell</button>
                             </div>
                         </div>
                     </div>

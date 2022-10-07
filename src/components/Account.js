@@ -111,7 +111,7 @@ export default function Account({ allCoins,userData,setuserData }) {
                 <tbody style={currentTheme}>
                     <tr>
                         <th><h3>Coins</h3></th>
-                        <th><h3>Price</h3></th>
+                        <th><h3>Amount</h3></th>
                         <th style={{ maxWidth: "max-content" }}><h3>Change In Last 24Hrs</h3></th>
                     </tr>
                     {user.boughtCoins.map(coin =>

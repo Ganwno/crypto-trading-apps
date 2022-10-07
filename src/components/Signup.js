@@ -1,60 +1,54 @@
 import { useThemeContext } from "./context/Theme";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useRef } from "react";
-import { useLoggedInContext } from "./context/LoggedInContext";
+import Parse from "parse";
 
 
 export default function Signup() {
     const { currentTheme } = useThemeContext();
-    const { setLoggedIn } = useLoggedInContext();
     const navigate = useNavigate();
-    const fName = useRef();
-    const lName = useRef();
-    const userName = useRef();
-    const email = useRef();
-    const password1 = useRef();
-    const password2 = useRef();
+    const fName = useRef(null);
+    const lName = useRef(null);
+    const userName = useRef(null);
+    const email = useRef(null);
+    const password1 = useRef(null);
+    const password2 = useRef(null);
     // eslint-disable-next-line
     const specialXs = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
     // eslint-disable-next-line
     const hasNumber = /\d/;
 
-    const app_id = process.env.REACT_APP_PARSE_APP_ID;
-    const js_key = process.env.REACT_APP_PARSE_JAVASCRIPT_KEY;
-
 
     function post() {
-        fetch(`https://parseapi.back4app.com/users`, {
-            method: "POST",
-            headers: {
-                "X-Parse-Application-Id": app_id,
-                "X-Parse-REST-API-Key": js_key,
-                "X-Parse-Revocable-Session": 1,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                "authData": {},
-                "boughtCoins": [{ coin: "bitcoin", amount: 0 }],
-                "username": userName.current.value,
-                "password": password1.current.value,
-                "email": email.current.value
-            })
-        }).then(r => r.json())
-            .then(result => {
-                console.log(result);
-                setLoggedIn(() => true)
-                navigate("/account")
-                localStorage.setItem("user", JSON.stringify({
-                    "password": password1.current.value,
-                    "email": email.current.value,
-                    "objectId": result.objectId
-                }))
-            })
-            .catch(err => {
-                console.log(err)
-                // err.code === 203 ? (alert("Acount Already Exists For " + email.current.value)) : null;
-                console.log(err)
-            });
+        Parse.initialize(
+            '6x0wgYd99Tukds3wL4FVeUIR3LG3MuVAMWmjUFsI', // This is your Application ID
+            'puLScGf62dABq7n5OGKI0biH0tMPFMWZQIT5Nvxk', // This is your Javascript key
+            'gZuYmhXEsEoPIzPNsuNtAa7m21knsAFKxsXz1nKz' // This is your Master key (never use it in the frontend)
+        );
+        //Point to Back4App Parse API address 
+        Parse.serverURL = 'https://parseapi.back4app.com';
+            (async () => {
+                const user = new Parse.User();
+                user.set('username', userName.current.value);
+                user.set('email', email.current.value);
+                user.set('avatar_url', "https://cdn.pixabay.com/photo/2014/11/16/23/39/superhero-534120_960_720.jpg");
+                user.set('boughtCoins', [{ coin: "BTC", amount: 0 }]);
+                user.set('password', password1.current.value);
+
+                try {
+                    let userResult = await user.signUp();
+                    console.log('User signed up', userResult);
+                    localStorage.setItem("user", JSON.stringify({
+                        "password": password1.current.value,
+                        "email": email.current.value,
+                        // "objectId": result.objectId
+                    }))
+                    navigate("/");
+                } catch (error) {
+                    console.error('Error while signing up user', error);
+                }
+            })();
+    
     }
 
 
@@ -88,8 +82,7 @@ export default function Signup() {
                             hasNumber.test(password1.current.value)) {
                             post()
                             console.log("Signed")
-                            setLoggedIn(() => true)
-                            navigate("/account")
+                            navigate("/")
                         }
                         else {
                             alert("Wrong input... Try again \n :)")

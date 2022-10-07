@@ -10,7 +10,6 @@ export default function Markets({ allCoins }) {
     let coinX = "";
     let amountX = "";
     if (coinAndPrice) {
-        console.log(coinAndPrice);
         str = (coinAndPrice.split(".Cur."));
         coinX = str[0];
         amountX = str[1];

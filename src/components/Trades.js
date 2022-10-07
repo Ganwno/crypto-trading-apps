@@ -29,7 +29,6 @@ export default function Trades({ userData, setuserData }) {
 
 
     if (coinAndPrice) {
-        console.log(coinAndPrice);
         if (coinAndPrice.includes(".Cur.")) {
             str = (coinAndPrice.split(".Cur."));
             coinX = str[0];
@@ -79,8 +78,6 @@ export default function Trades({ userData, setuserData }) {
 
                 try {
                     // Finds the user by its ID
-                    const someData = JSON.parse(localStorage.getItem("user"));
-                    console.log(someData);
                     let user = await query.get(Object.keys(JSON.parse(localStorage.getItem("user")).ACL)[1]);
                     // Updates the data we want
                     user.set('boughtCoins', [...JSON.parse(localStorage.getItem("user")).boughtCoins.filter(bCoin => bCoin.coin !== coinX)
@@ -112,7 +109,7 @@ export default function Trades({ userData, setuserData }) {
                     <p>{action !== "" ? "Sell" : "Buy"} {amountX + " " + coinX} {action !== "" ? "to" : "from"} {coinAndPrice && randomUser}</p>
                     <input type="number" onChange={calc} placeholder={coinX} />
                     <p>$ {parseFloat(totalBuy).toFixed(2) > 0 ? parseFloat(totalBuy).toFixed(2) : 0}</p>
-                    <button onClick={handleCoinsUpdate}>{action !== "" ? "Sell" : "Buy"}</button>
+                    <button style={currentTheme} onClick={handleCoinsUpdate}>{action !== "" ? "Sell" : "Buy"}</button>
                 </> :
                 <p>There are no traders avilable for now.<br />Come back later :)</p>
             }
