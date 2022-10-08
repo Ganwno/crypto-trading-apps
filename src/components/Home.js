@@ -7,15 +7,20 @@ import { BsEmojiAngry, BsEmojiExpressionless, BsFillEmojiSunglassesFill, BsEmoji
 import { useNavigate } from "react-router";
 import { useLoggedInContext } from "./context/LoggedInContext";
 
-export default function Home() {
+export default function Home({ allCoins }) {
     const { currentTheme } = useThemeContext();
-    const {loggedIn} =useLoggedInContext();
+    const { loggedIn } = useLoggedInContext();
     const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem("user"));
     let userNameHolder = "Esther Howard";
     let userEmailHolder = "estherhoward01@gmail.com";
     let imageUrl = "https://rockiereact.surielementor.com/static/media/user.50ae0b5cba24500443ed.jpg"
-    if(localStorage.getItem("user")!==null){
+    let totalAm = loggedIn && user.boughtCoins.reduce((total, bCoin) => total +
+         parseFloat(bCoin.amount * allCoins.find(coin => coin.symbol === bCoin.coin).priceUsd), 0);
+
+    let totalPer = loggedIn && user.boughtCoins.reduce((total, bCoin) => total +
+        parseFloat(allCoins.find(coin => coin.symbol === bCoin.coin).changePercent24Hr), 0);
+    if (localStorage.getItem("user") !== null) {
         userNameHolder = user.username;
         userEmailHolder = user.email;
         imageUrl = user.avatar_url;
@@ -28,7 +33,7 @@ export default function Home() {
                     <p>Crypto-Trade is the easiest place to buy and sell cryptocurrency.<br />
                         Sign up and get started today.
                     </p>
-                    <button onClick={()=>navigate(loggedIn ?"/buy-crypto":"/login")}>{loggedIn ?"Buy":"Start trading"}</button>
+                    <button onClick={() => navigate(loggedIn ? "/buy-crypto" : "/login")}>{loggedIn ? "Buy" : "Start trading"}</button>
                 </div>
                 <img src="https://rockiereact.surielementor.com/static/media/banner-03.e73e194292317d284a55.png" alt="crypto-trade handshake" />
             </div>
@@ -78,15 +83,15 @@ export default function Home() {
                     </div>
                     <div className="user-card">
                         <div className="info">
-                            <img src={imageUrl} style={{width:"100px",height:"auto", borderRadius:"100px"}} alt="userAvater" />
+                            <img src={imageUrl} style={{ width: "100px", height: "auto", borderRadius: "100px" }} alt="userAvater" />
                             <p>{userNameHolder}<br /><small>{userEmailHolder}</small></p>
                             <div className="portfolio">
                                 <h2>Portfolio</h2>
                                 <SiBitcoincash className="btc-icon" />
                                 <p><small>Balance</small></p>
-                                <h3><strong>$2,509.75</strong></h3><small className="percent">+9.77%</small>
-                                <button onClick={()=>navigate(loggedIn?"/buy-crypto":"/login")}>Buy More</button>
-                                <button onClick={()=>navigate(loggedIn?"/account":"/login")}>Sell</button>
+                                <h3><strong>{loggedIn ? totalAm.toFixed(2) : "$2,509.75"}</strong></h3><small className="percent">{loggedIn ? totalPer.toFixed(4) : "+9.77%"}</small>
+                                <button onClick={() => navigate(loggedIn ? "/buy-crypto" : "/login")}>Buy More</button>
+                                <button onClick={() => navigate(loggedIn ? "/account" : "/login")}>Sell</button>
                             </div>
                         </div>
                     </div>

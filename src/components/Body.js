@@ -26,7 +26,7 @@ export default function Body() {
 
         <div className='content-body' id="body">
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home allCoins={allCoins}/>} />
                 <Route path='/buy-crypto' element={loggedIn ? <BuyCrypto allCoins={allCoins} /> : <NotLoggedIn />}>
                     <Route path='/buy-crypto/:coin' element={<CoinBuycard allCoins={allCoins} />} />
                 </Route>
