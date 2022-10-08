@@ -47,4 +47,9 @@ Come back later :)"</i>, when you are not buying or selling crypto.</li>
 </ul>
 </li>
 </li>
+<h1>Extra Features</h1>
+<ul>
+<li><strong>Total Calculation</strong> : The App calculates the total Amount and average percent change of coins in a user profile and displays it on the home page at the profile area.</li>
+
+</ul>
 </body>
