@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/crypto-trading-app/static/css/main.88699719.css",
+    "main.js": "/crypto-trading-app/static/js/main.a9d82863.js",
+    "static/js/787.4dfdf7f0.chunk.js": "/crypto-trading-app/static/js/787.4dfdf7f0.chunk.js",
+    "index.html": "/crypto-trading-app/index.html",
+    "main.88699719.css.map": "/crypto-trading-app/static/css/main.88699719.css.map",
+    "main.a9d82863.js.map": "/crypto-trading-app/static/js/main.a9d82863.js.map",
+    "787.4dfdf7f0.chunk.js.map": "/crypto-trading-app/static/js/787.4dfdf7f0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.88699719.css",
+    "static/js/main.a9d82863.js"
+  ]
+}
