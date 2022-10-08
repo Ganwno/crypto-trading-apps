@@ -27,9 +27,6 @@ less code.</li>
 https://user-images.githubusercontent.com/105742325/194704252-f6c28ed1-7ad3-4300-97fc-89885ad6b170.mp4
 <body>
 <li><stron>Choose between <em>Light Theme</em> and <em>Dark Theme</em> in the menu</strong>
-<img src="./public/Screenshot%20from%202022-10-08%2002-25-35-crop.png" style="border-radius:0.5rem"/>
-<img src="./public/Screenshot%20from%202022-10-08%2002-25-40-crop.png"
-style="border-radius:0.5rem"/>
 </li>
 <li><strong>Create an account</strong><ul><li>You will be taken to the home page after creating the account.</li></ul></li>
 <li><strong>Login to your account</strong><ul>
