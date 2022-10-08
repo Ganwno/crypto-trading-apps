@@ -26,20 +26,20 @@ export default function Body() {
 
         <div className='content-body' id="body">
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path='/buy-crypto' element={loggedIn ? <BuyCrypto allCoins={allCoins} /> : <NotLoggedIn />}>
-                    <Route path='/buy-crypto/:coin' element={<CoinBuycard allCoins={allCoins} />} />
+                <Route path="./" element={<Home />} />
+                <Route path='./buy-crypto' element={loggedIn ? <BuyCrypto allCoins={allCoins} /> : <NotLoggedIn />}>
+                    <Route path='./buy-crypto/:coin' element={<CoinBuycard allCoins={allCoins} />} />
                 </Route>
-                <Route path='/markets' element={loggedIn ? <Markets allCoins={allCoins} /> : <NotLoggedIn />}>
-                    <Route path='/markets/:coinAndPrice' />
+                <Route path='./markets' element={loggedIn ? <Markets allCoins={allCoins} /> : <NotLoggedIn />}>
+                    <Route path='./markets/:coinAndPrice' />
                 </Route>
-                <Route path='/trades' element={loggedIn ? <Trades setuserData={setuserData} userData={userData} /> : <NotLoggedIn />}>
-                    <Route path='/trades/:coinAndPrice' />
+                <Route path='./trades' element={loggedIn ? <Trades setuserData={setuserData} userData={userData} /> : <NotLoggedIn />}>
+                    <Route path='./trades/:coinAndPrice' />
                 </Route>
-                <Route path='/account' element={loggedIn ? <Account allCoins={allCoins} setuserData={setuserData} userData={userData} /> : <NotLoggedIn />} />
+                <Route path='./account' element={loggedIn ? <Account allCoins={allCoins} setuserData={setuserData} userData={userData} /> : <NotLoggedIn />} />
 
-                <Route path='/login' element={<Login setuserData={setuserData}/>} />
-                <Route path='/signup' element={<Signup />} />
+                <Route path='./login' element={<Login setuserData={setuserData}/>} />
+                <Route path='./signup' element={<Signup />} />
             </Routes>
         </div>
     )
