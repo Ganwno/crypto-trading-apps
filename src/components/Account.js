@@ -4,9 +4,9 @@ import BoughtCoincard from "./BoughtCoincard";
 import Parse from "parse";
 import { useNavigate } from "react-router";
 
-export default function Account({ allCoins,userData,setuserData }) {
+export default function Account({ allCoins, userData, setuserData }) {
     const { currentTheme } = useThemeContext();
-    const navigate =useNavigate();
+    const navigate = useNavigate();
     const avator = useRef();
     const avatar_url = useRef();
     const email = useRef();
@@ -50,6 +50,7 @@ export default function Account({ allCoins,userData,setuserData }) {
                     }));
                     navigate("/")
                 } catch (error) {
+                    alert("Fill all fileds for changes to activate.\n:)")
                     console.error('Error while updating user', error);
                     console.log(someData);
                 }
@@ -114,7 +115,8 @@ export default function Account({ allCoins,userData,setuserData }) {
                     <tr>
                         <th><h3>Coins</h3></th>
                         <th><h3>Amount</h3></th>
-                        <th style={{ maxWidth: "max-content" }}><h3>Change In Last 24Hrs</h3></th>
+                        <th style={{ maxWidth: "max-content" }}></th>
+                        <th></th>
                     </tr>
                     {user.boughtCoins.map(coin =>
                         <BoughtCoincard

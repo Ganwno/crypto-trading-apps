@@ -1,6 +1,5 @@
 import NavBar from './components/NavBar';
 import './App.css';
-import { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Body from './components/Body';
 import { ThemeProvider } from './components/context/Theme';

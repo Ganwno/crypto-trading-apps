@@ -34,7 +34,7 @@ export default function Login({ setuserData }) {
                             localStorage.setItem("user", JSON.stringify(user.attributes));
                             setuserData(() => user.attributes);
                             setLoggedIn(true);
-                            navigate("/account")
+                            navigate("/")
                         } catch (error) {
                             alert(error.message);
                         }

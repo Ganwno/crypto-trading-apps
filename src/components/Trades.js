@@ -64,7 +64,7 @@ export default function Trades({ userData, setuserData }) {
 
         let rem = action !== "" ? (parseInt(coinAv()) - coinSell) : (parseInt(coinAv()) + coinSell);
         // coinSell > coinAv ? alert("Maximum number you can sell is " + coinAv) : alert("You are remaining with " + parseInt(rem) + " " + coinX);
-        if (coinSell !== 0) {
+        if (rem >= 0 &&coinSell > 0 &&rem !== parseInt(coinAv())) {
             Parse.initialize(
                 '6x0wgYd99Tukds3wL4FVeUIR3LG3MuVAMWmjUFsI', // This is your Application ID
                 'puLScGf62dABq7n5OGKI0biH0tMPFMWZQIT5Nvxk', // This is your Javascript key
@@ -99,6 +99,9 @@ export default function Trades({ userData, setuserData }) {
                     console.error('Error while retrieving user', error);
                 }
             })();
+        }
+        else {
+            alert("You can't sell more than the availble coins in your wallet, zero,\n Or a negative amount.\n:)")
         }
     }
     return (

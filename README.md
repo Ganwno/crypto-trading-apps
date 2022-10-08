@@ -37,4 +37,7 @@ style="border-radius:0.5rem"/>
 <li>Lastly, the <strong>Trades</strong> section is where the <em>math</em> happens. It will show <i>"There are no traders avilable for now.
 Come back later :)"</i>, when you are not buying or selling crypto.</li>
 </ul>
+<h1>Issues</h1>
+<li>To update your profile, you'll need to fill out all the input fileds for</li>
+</li>
 </body>
