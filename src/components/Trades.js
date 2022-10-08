@@ -62,9 +62,9 @@ export default function Trades({ userData, setuserData }) {
 
     function handleCoinsUpdate() {
 
-        let rem = action !== "" ? (parseInt(coinAv()) - coinSell) : (parseInt(coinAv()) + coinSell);
-        // coinSell > coinAv ? alert("Maximum number you can sell is " + coinAv) : alert("You are remaining with " + parseInt(rem) + " " + coinX);
-        if (rem >= 0 &&coinSell > 0 &&rem !== parseInt(coinAv())) {
+        let rem = action !== "" ? (parseFloat(coinAv()) - coinSell) : (parseFloat(coinAv()) + coinSell);
+        // coinSell > coinAv ? alert("Maximum number you can sell is " + coinAv) : alert("You are remaining with " + parseFloat(rem) + " " + coinX);
+        if (rem >= 0 &&coinSell > 0 &&rem !== parseFloat(coinAv())) {
             Parse.initialize(
                 '6x0wgYd99Tukds3wL4FVeUIR3LG3MuVAMWmjUFsI', // This is your Application ID
                 'puLScGf62dABq7n5OGKI0biH0tMPFMWZQIT5Nvxk', // This is your Javascript key

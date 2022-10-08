@@ -38,6 +38,10 @@ style="border-radius:0.5rem"/>
 Come back later :)"</i>, when you are not buying or selling crypto.</li>
 </ul>
 <h1>Issues</h1>
-<li>To update your profile, you'll need to fill out all the input fileds for</li>
+<li><strong>Email Verification</strong>
+<ul><li>A user can input an invalid email</li>
+<li><strong>Solution</strong>: Have the App send a email verification to email on sign up.</li>
+</ul>
+</li>
 </li>
 </body>
