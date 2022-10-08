@@ -22,7 +22,7 @@ less code.</li>
 <h1>Application Manual</h1>
 <span>How To Use It</span>
 <ul>
-<li><a><strong>Video Guide</strong></a></li>
+<li><a href="https://drive.google.com/file/d/1mZi4-gHJQO9OJLVYVOZ6KbtyEMkE19z8/view?usp=sharing"><strong>Video Guide</strong></a></li>
 <li><stron>Choose between <em>Light Theme</em> and <em>Dark Theme</em> in the menu</strong>
 <img src="./public/Screenshot%20from%202022-10-08%2002-25-35-crop.png" style="border-radius:0.5rem"/>
 <img src="./public/Screenshot%20from%202022-10-08%2002-25-40-crop.png"
