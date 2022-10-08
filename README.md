@@ -23,6 +23,10 @@ less code.</li>
 <span>How To Use It</span>
 <ul>
 <li><a href="https://drive.google.com/file/d/1mZi4-gHJQO9OJLVYVOZ6KbtyEMkE19z8/view?usp=sharing"><strong>Video Guide</strong></a></li>
+<video width="max-content" height="300" controls>
+  <source src="./public/2022-10-08 12-43-02.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 <li><stron>Choose between <em>Light Theme</em> and <em>Dark Theme</em> in the menu</strong>
 <img src="./public/Screenshot%20from%202022-10-08%2002-25-35-crop.png" style="border-radius:0.5rem"/>
 <img src="./public/Screenshot%20from%202022-10-08%2002-25-40-crop.png"
