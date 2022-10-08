@@ -23,7 +23,9 @@ less code.</li>
 <span>How To Use It</span>
 <ul>
 <li><a href="https://drive.google.com/file/d/1bw-vjR5LaxkzqnS5BUXUZFj4cW2vQu9R/view?usp=sharing" target=" _blank"><strong>Video Guide</strong></a></li>
-<video tabindex="-1" class="video-stream html5-main-video" webkit-playsinline="" playsinline="" controlslist="nodownload" style="width: 532px; height: 299px; left: 1px; top: 0px;" src="https://rr4---sn-hc57enee.c.drive.google.com/videoplayback?expire=1665240333&amp;ei=zVRBY-XEAfmA_9EP2I69kAg&amp;ip=105.51.214.154&amp;cp=QVRLV0NfT1NRRFhPOjRpZnhlTjl1c3J0ekVieDR1dm5wcUs0bkZSamRZOXdyNm1lQlNfbWxqVTA&amp;id=51862df50fc77670&amp;itag=18&amp;source=webdrive&amp;requiressl=yes&amp;mh=Mf&amp;mm=32&amp;mn=sn-hc57enee&amp;ms=su&amp;mv=m&amp;mvi=4&amp;pl=13&amp;ttl=transient&amp;susc=dr&amp;driveid=1bw-vjR5LaxkzqnS5BUXUZFj4cW2vQu9R&amp;app=explorer&amp;mime=video/mp4&amp;vprv=1&amp;prv=1&amp;dur=481.535&amp;lmt=1665225922842153&amp;mt=1665225435&amp;subapp=DRIVE_WEB_FILE_VIEWER&amp;txp=0016224&amp;sparams=expire,ei,ip,cp,id,itag,source,requiressl,ttl,susc,driveid,app,mime,vprv,prv,dur,lmt&amp;sig=AOq0QJ8wRQIgLdQC3mXYgHohyA4oAd7Gt7aDRDwP0pilTadBWMEhYAECIQDX1Rq7rFjwzfQ3zkpM0zKIB8wV31NHuGGZY0llfgEwQQ==&amp;lsparams=mh,mm,mn,ms,mv,mvi,pl&amp;lsig=AG3C_xAwRAIgYvVEi61dsMSGrf8WLlbFs_WJ0RzL8H_fY-SLdSqorJ4CIGTGEA1Eve6c134iQM_o9blNksjtm_QvQ1H0rzPmjX0P&amp;cpn=dssazE1mLnL4Mx-e&amp;c=WEB_EMBEDDED_PLAYER&amp;cver=1.20221005.01.01"></video>
+</body>
+
+<body>
 <li><stron>Choose between <em>Light Theme</em> and <em>Dark Theme</em> in the menu</strong>
 <img src="./public/Screenshot%20from%202022-10-08%2002-25-35-crop.png" style="border-radius:0.5rem"/>
 <img src="./public/Screenshot%20from%202022-10-08%2002-25-40-crop.png"
