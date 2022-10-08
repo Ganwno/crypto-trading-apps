@@ -19,7 +19,7 @@ export default function Home({ allCoins }) {
          parseFloat(bCoin.amount * allCoins.find(coin => coin.symbol === bCoin.coin).priceUsd), 0);
 
     let totalPer = loggedIn && user.boughtCoins.reduce((total, bCoin) => total +
-        parseFloat(allCoins.find(coin => coin.symbol === bCoin.coin).changePercent24Hr), 0);
+        parseFloat(allCoins.find(coin => coin.symbol === bCoin.coin).changePercent24Hr), 0)/user.boughtCoins.length;
     if (localStorage.getItem("user") !== null) {
         userNameHolder = user.username;
         userEmailHolder = user.email;
