@@ -12,7 +12,6 @@ export default function Login({ setuserData }) {
         'puLScGf62dABq7n5OGKI0biH0tMPFMWZQIT5Nvxk',
         'gZuYmhXEsEoPIzPNsuNtAa7m21knsAFKxsXz1nKz' 
     );
-    //Point to Back4App Parse API address 
     Parse.serverURL = 'https://parseapi.back4app.com'
     const username = useRef();
     const password = useRef();
