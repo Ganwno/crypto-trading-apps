@@ -22,7 +22,7 @@ less code.</li>
 <h1>Application Manual</h1>
 <span>How To Use It</span>
 <ul>
-<li><a href="https://drive.google.com/file/d/1mZi4-gHJQO9OJLVYVOZ6KbtyEMkE19z8/view?usp=sharing"><strong>Video Guide</strong></a></li>
+<li><a href="https://drive.google.com/file/d/1bw-vjR5LaxkzqnS5BUXUZFj4cW2vQu9R/view?usp=sharing" target=" _blank"><strong>Video Guide</strong></a></li>
 <video width="max-content" height="300" controls>
   <source src="./public/2022-10-08 12-43-02.mp4" type="video/mp4">
 Your browser does not support the video tag.
