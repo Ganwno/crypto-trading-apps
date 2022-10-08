@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+<body style="background-color:rgba(7,25,255,0.324)">
+<h1>CRYPTO-TRADING-APP</h1>
+<img src='./public/Screenshot from 2022-10-08 02-04-2402.png'/>
+<h2>Introduction</h2>
+<p>Trading in cryptocurrencies has its pros and cons. A major pro, is <a href="https://byjus.com/current-affairs/cryptocurrency/">funds transfer between two parties will be easy without the need of third party like credit/debit cards or banks.</a></p>
+<p>But this comes with one minor problem, learning how to use it, and navigate.</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h2>Technologies</h2>
+<ul>
+<li><strong>React</strong></li>
+<li><strong>React-Router-Dom</strong></li>
+<li><strong>JSX</strong></li>
+<li>Plus, <strong>Vanilla Java Script</strong></li>
+</ul>
+<h2>APIs</h2>
+<ul>
+<li><a href="https://docs.coincap.io/">Capcoin</a> : a useful tool for real-time pricing and market activity for over 1,000 cryptocurrencies</li>
+<li><a href="https://www.back4app.com/">Back4App</a> : Back4App lets you quickly connect the front and backend, regardless
+of what language was used in your frontend. Get started faster with
+less code.</li>
+</ul>
+<h1>Application Manual</h1>
+<span>How To Use It</span>
+<ul>
+<li><a><strong>Video Guide</strong></a></li>
+<li><stron>Choose between <em>Light Theme</em> and <em>Dark Theme</em> in the menu</strong>
+<img src="./public/Screenshot%20from%202022-10-08%2002-25-35-crop.png" style="border-radius:1rem"/>
+<img src="./public/Screenshot%20from%202022-10-08%2002-25-40-crop.png"
+style="border-radius:1rem"/>
+</li>
+<li><strong>Create an account</strong><ul><li>You will be taken to the home page after creating the account.</li></ul></li>
+<li><strong>Login to your account</strong><ul>
+<li>You can customize your profile picture url, email and username at this point by clicking on the <em>Update Profile</em> button.</li>
+</ul></li>
+<li>You can buy any of the available currencies in the <strong>Buy Crypto</strong> section.</li>
+<li>The <strong>Market</strong> section will show the current market cap, change in the last 24 hrs and the volume used for the cryptocurrencies ranked above 101.</li>
+<li>Lastly, the <strong>Trades</strong> section is where the <em>math</em> happens. It will show <i>"There are no traders avilable for now.
+Come back later :)"</i>, when you are not buying or selling crypto.</li>
+</ul>
+</body>
