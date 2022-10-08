@@ -1,8 +1,8 @@
 <body style="background-color:rgba(7,25,255,0.324)">
 <h1>CRYPTO-TRADING-APP</h1>
-<img src='./public/Screenshot from 2022-10-08 02-04-2402.png'/>
+<img src='./public/Screenshot from 2022-10-08 02-04-2402.png' style="border-radius:0.5rem"/>
 <h2>Introduction</h2>
-<p>Trading in cryptocurrencies has its pros and cons. A major pro, is <a href="https://byjus.com/current-affairs/cryptocurrency/">funds transfer between two parties will be easy without the need of third party like credit/debit cards or banks.</a></p>
+<p>Trading in cryptocurrencies has its pros and cons. A major pro, is <a href="https://byjus.com/current-affairs/cryptocurrency/" >funds transfer between two parties will be easy without the need of third party like credit/debit cards or banks.</a></p>
 <p>But this comes with one minor problem, learning how to use it, and navigate.</p>
 
 <h2>Technologies</h2>
