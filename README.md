@@ -24,7 +24,7 @@ less code.</li>
 <ul>
 <li><a href="https://drive.google.com/file/d/1bw-vjR5LaxkzqnS5BUXUZFj4cW2vQu9R/view?usp=sharing" target=" _blank"><strong>Video Guide</strong></a></li>
 </body>
-
+https://user-images.githubusercontent.com/105742325/194704252-f6c28ed1-7ad3-4300-97fc-89885ad6b170.mp4
 <body>
 <li><stron>Choose between <em>Light Theme</em> and <em>Dark Theme</em> in the menu</strong>
 <img src="./public/Screenshot%20from%202022-10-08%2002-25-35-crop.png" style="border-radius:0.5rem"/>
