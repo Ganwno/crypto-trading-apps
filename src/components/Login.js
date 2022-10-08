@@ -29,7 +29,7 @@ export default function Login({ setuserData }) {
                     e.preventDefault();
                     (async () => {
                         try {
-                            // Pass the username and password to logIn function
+                            
                             let user = await Parse.User.logIn(username.current.value, password.current.value);
                             localStorage.setItem("user", JSON.stringify(user.attributes));
                             setuserData(() => user.attributes);
