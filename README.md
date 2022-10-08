@@ -24,9 +24,9 @@ less code.</li>
 <ul>
 <li><a><strong>Video Guide</strong></a></li>
 <li><stron>Choose between <em>Light Theme</em> and <em>Dark Theme</em> in the menu</strong>
-<img src="./public/Screenshot%20from%202022-10-08%2002-25-35-crop.png" style="border-radius:1rem"/>
+<img src="./public/Screenshot%20from%202022-10-08%2002-25-35-crop.png" style="border-radius:0.5rem"/>
 <img src="./public/Screenshot%20from%202022-10-08%2002-25-40-crop.png"
-style="border-radius:1rem"/>
+style="border-radius:0.5rem"/>
 </li>
 <li><strong>Create an account</strong><ul><li>You will be taken to the home page after creating the account.</li></ul></li>
 <li><strong>Login to your account</strong><ul>
