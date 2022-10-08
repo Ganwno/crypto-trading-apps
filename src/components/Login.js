@@ -8,8 +8,8 @@ export default function Login({ setuserData }) {
     const navigate = useNavigate();
 
     Parse.initialize(
-        '6x0wgYd99Tukds3wL4FVeUIR3LG3MuVAMWmjUFsI', // This is your Application ID
-        'puLScGf62dABq7n5OGKI0biH0tMPFMWZQIT5Nvxk', // This is your Javascript key
+        '6x0wgYd99Tukds3wL4FVeUIR3LG3MuVAMWmjUFsI',
+        'puLScGf62dABq7n5OGKI0biH0tMPFMWZQIT5Nvxk',
         'gZuYmhXEsEoPIzPNsuNtAa7m21knsAFKxsXz1nKz' 
     );
     //Point to Back4App Parse API address 
