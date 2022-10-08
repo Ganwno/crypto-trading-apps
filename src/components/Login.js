@@ -22,9 +22,9 @@ export default function Login({ setuserData }) {
         <div className="login" style={currentTheme}>
             <form >
                 <input type="email"
-                    placeholder="username" ref={username} /><br />
+                    placeholder="username" ref={username} required/><br />
                 <input type="password"
-                    placeholder="password" ref={password} />
+                    placeholder="password" ref={password} required/>
                 <button onClick={(e) => {
                     e.preventDefault();
                     (async () => {

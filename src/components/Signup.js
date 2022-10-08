@@ -55,16 +55,16 @@ export default function Signup() {
         <div className="signup" style={currentTheme}>
             <form>
                 <div>
-                    <label>First Name</label><input type="text" placeholder="Jonh" ref={fName} />
-                    <label>Last Name</label><input type="text" placeholder="Doe" ref={lName} />
+                    <label>First Name</label><input type="text" placeholder="Jonh" ref={fName} required/>
+                    <label>Last Name</label><input type="text" placeholder="Doe" ref={lName} required/>
                 </div>
                 <div>
-                    <label>User Name</label><input type="text" placeholder="johnDoe14fsx" ref={userName} />
-                    <label>Email</label><input type="email" placeholder="Doe" ref={email} /><br />
+                    <label>User Name</label><input type="text" placeholder="johnDoe14fsx" ref={userName} required/>
+                    <label>Email</label><input type="email" placeholder="Doe" ref={email} required/><br />
                     <label>Password</label>
                     <label><small>8 Or More Characters, Including Numbers And Special Characters</small></label>
-                    <input type="password" placeholder="Password" ref={password1} />
-                    <label>Confirm Password</label><input type="password" placeholder="Password" ref={password2} />
+                    <input type="password" placeholder="Password" ref={password1} required/>
+                    <label>Confirm Password</label><input type="password" placeholder="Password" ref={password2} required/>
                 </div>
                 <button
                     style={currentTheme}
@@ -72,9 +72,6 @@ export default function Signup() {
                     onClick={(e) => {
                         e.preventDefault();
                         if (
-                            fName.current.value !== "" &&
-                            lName.current.value !== "" &&
-                            userName.current.value !== "" &&
                             password1.current.value === password2.current.value &&
                             password1.current.value.length > 7 &&
                             specialXs.test(password1.current.value) &&
