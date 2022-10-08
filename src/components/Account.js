@@ -2,9 +2,11 @@ import { useRef, useState } from "react";
 import { useThemeContext } from "./context/Theme";
 import BoughtCoincard from "./BoughtCoincard";
 import Parse from "parse";
+import { useNavigate } from "react-router";
 
 export default function Account({ allCoins,userData,setuserData }) {
     const { currentTheme } = useThemeContext();
+    const navigate =useNavigate();
     const avator = useRef();
     const avatar_url = useRef();
     const email = useRef();
@@ -46,7 +48,7 @@ export default function Account({ allCoins,userData,setuserData }) {
                         'email': email.current.value === "" ? someData.email : email.current.value,
                         'avatar_url': avatar_url.current.value === "" ? someData.avatar_url : avatar_url.current.value
                     }));
-                    window.location.reload()
+                    navigate("/")
                 } catch (error) {
                     console.error('Error while updating user', error);
                     console.log(someData);
