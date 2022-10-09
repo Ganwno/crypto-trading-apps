@@ -56,8 +56,10 @@ https://user-images.githubusercontent.com/105742325/194704252-f6c28ed1-7ad3-4300
 </ul></li>
 <li>You can buy any of the available currencies in the <strong>Buy Crypto</strong> section.</li>
 <li>The <strong>Market</strong> section will show the current market cap, change in the last 24 hrs and the volume used for the cryptocurrencies ranked above 101.</li>
-<li>Lastly, the <strong>Trades</strong> section is where the <em>math</em> happens. It will show <i>"There are no traders avilable for now.
-Come back later :)"</i>, when you are not buying or selling crypto.</li>
+<li>Lastly, the <strong>Trades</strong> section is where the <em>math</em> happens. It will show <i>"There are no traders available for now.
+Come back later :)"</i>, when you are not buying or selling crypto.<br/>
+Go to Account/Buy Crypto section and buy crypto. 
+</li>
 </ul>
 <h1>Issues</h1>
 <li><strong>Email Verification</strong>
