@@ -3,10 +3,10 @@
 <img src='./public/Screenshot from 2022-10-08 02-04-2402.png' style="border-radius:0.5rem"/>
 <h2>Introduction</h2>
 <p>Trading in cryptocurrencies has its pros and cons. A major pro, is <a href="https://byjus.com/current-affairs/cryptocurrency/" >funds transfer between two parties will be easy without the need of third party like credit/debit cards or banks.</a></p>
-<p>But this comes with one minor problem, learning how to use it, and navigate.</p>
+<p>But this comes with one minor problem.</p>
 
 <h2>Problem Statement</h2>
-<p>You have to keep track of all your wallets. If you want to buy at a lower price and sell at a higher price, you have to monitor how the coin is doing in market. This might require you to visit some platforms like <a href="https://coinmarketcap.com/">CoinMarketCap</a>, or <a>CoinGecko</a>. Then buy coins on an exchange platform.</p>
+<p>Learning how to use it, and navigate. You have to keep track of all your wallets. If you want to buy at a lower price and sell at a higher price, you have to monitor how the coin is doing in market. This might require you to visit some platforms like <a href="https://coinmarketcap.com/">CoinMarketCap</a>, or <a>CoinGecko</a>. Then buy coins on an exchange platform.</p>
 <p>The exchange platforms can be too complex if you are just starting out. Creating wallets for the different  coins you are going to hold and tracking from which wallet you are adding to or removing from can be challenging. It being difficult to reverse a transaction on a blockchain, one has to be extra careful when inputting the wallet that they want to send to. Sometimes, it is difficult to find a seller or a buyer for your specific coin.</p>
 
 <h2>Solution</h2>
