@@ -35,7 +35,7 @@
 <ul>
 <li><a href="https://docs.coincap.io/">Capcoin</a> : a useful tool for real-time pricing and market activity for over 1,000 cryptocurrencies</li>
 <li><a href="https://www.back4app.com/">Back4App</a> : Back4App lets you quickly connect the front and backend, regardless
-of what language was used in your frontend. Get started faster with
+of what language was used in your frontend. Used to store user data.
 less code.</li>
 </ul>
 <h1>Application Manual</h1>
