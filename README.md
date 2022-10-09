@@ -66,9 +66,4 @@ Come back later :)"</i>, when you are not buying or selling crypto.</li>
 </ul>
 </li>
 </li>
-<h1>Extra Features</h1>
-<ul>
-<li><strong>Total Calculation</strong> : The App calculates the total Amount and average percent change of coins in a user profile and displays it on the home page at the profile area.</li>
-<li><strong>Logged In Status</strong> : The App keeps a user's logged-in-status. If a user logged in and closed the browser-tab for the App, and opened the App later, they would not have to go through logging in.</li>
-</ul>
 </body>
