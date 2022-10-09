@@ -15,10 +15,9 @@ export default function Home({ allCoins }) {
     let userNameHolder = "Esther Howard";
     let userEmailHolder = "estherhoward01@gmail.com";
     let imageUrl = "https://rockiereact.surielementor.com/static/media/user.50ae0b5cba24500443ed.jpg"
-    let totalAm = loggedIn && (localStorage.getItem("user")) && user.boughtCoins.reduce((total, bCoin) => total +
+    let totalAm = loggedIn && (localStorage.getItem("user")) && allCoins.length!==0 && user.boughtCoins.reduce((total, bCoin) => total +
         parseFloat(bCoin.amount * allCoins.find(coin => coin.symbol === bCoin.coin).priceUsd), 0);
-
-    let totalPer = loggedIn && (localStorage.getItem("user")) && user.boughtCoins.reduce((total, bCoin) => total +
+    let totalPer = loggedIn && (localStorage.getItem("user")) && allCoins.length!==0 && user.boughtCoins.reduce((total, bCoin) => total +
         parseFloat(allCoins.find(coin => coin.symbol === bCoin.coin).changePercent24Hr), 0) / user.boughtCoins.length;
     if (localStorage.getItem("user") !== null) {
         userNameHolder = user.username;
@@ -89,7 +88,8 @@ export default function Home({ allCoins }) {
                                 <h2>Portfolio</h2>
                                 <SiBitcoincash className="btc-icon" />
                                 <p><small>Balance</small></p>
-                                <h3><strong>{loggedIn ? totalAm.toFixed(2) : "$2,509.75"}</strong></h3><small className="percent">{loggedIn ? totalPer.toFixed(4) : "+9.77%"}</small>
+                                <h3><strong>{loggedIn && allCoins.length!==0 ? totalAm.toFixed(2) : "$2,509.75"}</strong>
+                                </h3><small className="percent">{loggedIn && allCoins.length!==0 ? totalPer.toFixed(4) : "+9.77%"}</small>
                                 <button onClick={() => navigate(loggedIn ? "/buy-crypto" : "/login")}>Buy More</button>
                                 <button onClick={() => navigate(loggedIn ? "/account" : "/login")}>Sell</button>
                             </div>
