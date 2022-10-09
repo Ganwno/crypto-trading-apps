@@ -23,7 +23,6 @@
 <li>A Table to show the different prices of various coin in the market.</li>
 <li>One or two components for selling or buying coins.</li>
 </ul>
-<p>A table to show the</p>
 
 <h2>Technologies</h2>
 <ul>
