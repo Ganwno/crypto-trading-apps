@@ -68,4 +68,7 @@ Go to Account/Buy Crypto section and buy crypto.
 </ul>
 </li>
 </li>
+<h1>Extra Features</h1>
+<li>Viewing amount in Dollars in the home page after logging in.</li>
+<li>Viewing average percent change for all coins ever held.</li>
 </body>
