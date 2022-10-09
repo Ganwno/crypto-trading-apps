@@ -26,28 +26,28 @@ export default function Signup() {
             'gZuYmhXEsEoPIzPNsuNtAa7m21knsAFKxsXz1nKz'
         );
         Parse.serverURL = 'https://parseapi.back4app.com';
-            (async () => {
-                const user = new Parse.User();
-                user.set('username', userName.current.value);
-                user.set('email', email.current.value);
-                user.set('avatar_url', "https://cdn.pixabay.com/photo/2014/11/16/23/39/superhero-534120_960_720.jpg");
-                user.set('boughtCoins', [{ coin: "BTC", amount: 0 }]);
-                user.set('password', password1.current.value);
+        (async () => {
+            const user = new Parse.User();
+            user.set('username', userName.current.value);
+            user.set('email', email.current.value);
+            user.set('avatar_url', "https://cdn.pixabay.com/photo/2014/11/16/23/39/superhero-534120_960_720.jpg");
+            user.set('boughtCoins', [{ coin: "BTC", amount: 0 }]);
+            user.set('password', password1.current.value);
 
-                try {
-                    let userResult = await user.signUp();
-                    console.log('User signed up', userResult);
-                    localStorage.setItem("user", JSON.stringify({
-                        "password": password1.current.value,
-                        "email": email.current.value,
-                        // "objectId": result.objectId
-                    }))
-                    navigate("/");
-                } catch (error) {
-                    console.error('Error while signing up user', error);
-                }
-            })();
-    
+            try {
+                let userResult = await user.signUp();
+                console.log('User signed up', userResult);
+                localStorage.setItem("user", JSON.stringify({
+                    "password": password1.current.value,
+                    "email": email.current.value,
+                    // "objectId": result.objectId
+                }))
+                navigate("/");
+            } catch (error) {
+                console.error('Error while signing up user', error);
+            }
+        })();
+
     }
 
 
@@ -55,16 +55,16 @@ export default function Signup() {
         <div className="signup" style={currentTheme}>
             <form>
                 <div>
-                    <label>First Name</label><input type="text" placeholder="Jonh" ref={fName} required/>
-                    <label>Last Name</label><input type="text" placeholder="Doe" ref={lName} required/>
+                    <label>First Name</label><input type="text" placeholder="Jonh" ref={fName} required />
+                    <label>Last Name</label><input type="text" placeholder="Doe" ref={lName} required />
                 </div>
                 <div>
-                    <label>User Name</label><input type="text" placeholder="johnDoe14fsx" ref={userName} required/>
-                    <label>Email</label><input type="email" placeholder="Doe" ref={email} required/><br />
+                    <label>User Name</label><input type="text" placeholder="johnDoe14fsx" ref={userName} required />
+                    <label>Email</label><input type="email" placeholder="Doe" ref={email} required /><br />
                     <label>Password</label>
                     <label><small>8 Or More Characters, Including Numbers And Special Characters</small></label>
-                    <input type="password" placeholder="Password" ref={password1} required/>
-                    <label>Confirm Password</label><input type="password" placeholder="Password" ref={password2} required/>
+                    <input type="password" placeholder="Password" ref={password1} required />
+                    <label>Confirm Password</label><input type="password" placeholder="Password" ref={password2} required />
                 </div>
                 <button
                     style={currentTheme}
@@ -72,6 +72,7 @@ export default function Signup() {
                     onClick={(e) => {
                         e.preventDefault();
                         if (
+                            email.current.value.includes("@") &&
                             password1.current.value === password2.current.value &&
                             password1.current.value.length > 7 &&
                             specialXs.test(password1.current.value) &&
