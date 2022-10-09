@@ -14,7 +14,6 @@ export default function Body() {
     const { loggedIn } = useLoggedInContext();
     const [allCoins, setallCoins] = useState([]);
     const [userData, setuserData] = useState({});
-    localStorage.clear();
     useEffect(() => {
         fetch("https://api.coincap.io/v2/assets")
             .then(r => r.json())

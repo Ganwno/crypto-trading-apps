@@ -5,9 +5,7 @@ import Body from './components/Body';
 import { ThemeProvider } from './components/context/Theme';
 import { LoggedInProvider } from './components/context/LoggedInContext';
 function App() {
-
   return (
-
     <ThemeProvider>
       <BrowserRouter>
         <LoggedInProvider>

@@ -15,11 +15,11 @@ export default function Home({ allCoins }) {
     let userNameHolder = "Esther Howard";
     let userEmailHolder = "estherhoward01@gmail.com";
     let imageUrl = "https://rockiereact.surielementor.com/static/media/user.50ae0b5cba24500443ed.jpg"
-    let totalAm = loggedIn && user.boughtCoins.reduce((total, bCoin) => total +
-         parseFloat(bCoin.amount * allCoins.find(coin => coin.symbol === bCoin.coin).priceUsd), 0);
+    let totalAm = loggedIn && (localStorage.getItem("user")) && user.boughtCoins.reduce((total, bCoin) => total +
+        parseFloat(bCoin.amount * allCoins.find(coin => coin.symbol === bCoin.coin).priceUsd), 0);
 
-    let totalPer = loggedIn && user.boughtCoins.reduce((total, bCoin) => total +
-        parseFloat(allCoins.find(coin => coin.symbol === bCoin.coin).changePercent24Hr), 0)/user.boughtCoins.length;
+    let totalPer = loggedIn && (localStorage.getItem("user")) && user.boughtCoins.reduce((total, bCoin) => total +
+        parseFloat(allCoins.find(coin => coin.symbol === bCoin.coin).changePercent24Hr), 0) / user.boughtCoins.length;
     if (localStorage.getItem("user") !== null) {
         userNameHolder = user.username;
         userEmailHolder = user.email;
