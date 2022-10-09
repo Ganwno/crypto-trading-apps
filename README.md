@@ -4,6 +4,26 @@
 <h2>Introduction</h2>
 <p>Trading in cryptocurrencies has its pros and cons. A major pro, is <a href="https://byjus.com/current-affairs/cryptocurrency/" >funds transfer between two parties will be easy without the need of third party like credit/debit cards or banks.</a></p>
 <p>But this comes with one minor problem, learning how to use it, and navigate.</p>
+<p>You also have to keep track of all your wallets. If you want to buy at a lower price and sell at a higher price, you have to monitor how the coin is doing in market. This might require you to visit some platforms like <a href="https://coinmarketcap.com/">CoinMarketCap</a>, or <a>CoinGecko</a>. Then buy coins on an exchange platform that keeps track of the coins you buy.</p>
+
+<h2>Problem Statement</h2>
+<p>The exchange platforms can be too complex if you are just starting out. Creating wallets for the different  coins you are going to hold and tracking from which wallet you are adding to or removing from can be challenging. It being difficult to reverse a transaction on a blockchain, one has to be extra careful when inputting the wallet that they want to send to. Sometime it is difficult to find a seller or buyer for your specific coin.</p>
+
+<h2>Solution</h2>
+<p>A platform that will simplify wallet management, finding buyers and sellers for various coins and have access to coin prices.</p>
+
+<h2>MVP</h2>
+<ul>
+<li>Home component that all users will view. It is personalized if the user is logged in.</li>
+<li>A Login component for registered users</li>
+<li>A Register/Sign-up component for unregistered users.</li>
+<li>A simple navigation component
+<ul><li>The navigation is different for logged in users and for logged out users.</li>
+</ul></li>
+<li>A Table to show the different prices of various coin in the market.</li>
+<li>One or two components for selling or buying coins.</li>
+</ul>
+<p>A table to show the</p>
 
 <h2>Technologies</h2>
 <ul>
