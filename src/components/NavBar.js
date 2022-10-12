@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { FiLogOut } from 'react-icons/fi';
 import { useThemeContext } from "./context/Theme";
 import { useLoggedInContext } from "./context/LoggedInContext";
+import {BiHelpCircle} from 'react-icons/bi';
 
 let showMenu = false;
 export default function NavBar() {
@@ -74,11 +75,15 @@ export default function NavBar() {
                                 <span><FiLogOut /></span>
                             </NavLink>
                         </li>
-                    </> : <li>
+                    </> : <> <li>
                         <NavLink to='/login' onClick={handleMenu}>
                             <span>Login</span>
                         </NavLink>
-                    </li>}
+                    </li>
+                        <li>
+                        <a href="https://wa.me/+254798450464/?text=HELP: Crypto-Trading-Appvtwo" target=" _blank" data-action="share/whatsapp/share"><BiHelpCircle fontSize="2rem"/></a>
+                        </li>
+                    </>}
                 </ul>
             </nav>
             <div className="menu-btn" onClick={handleMenu}>
