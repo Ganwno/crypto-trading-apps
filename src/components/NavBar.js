@@ -81,7 +81,7 @@ export default function NavBar() {
                         </NavLink>
                     </li>
                         <li>
-                        <a href="https://api.whatsapp.com/+254798450464/?text=HELP: Crypto-Trading-Appvtwo" target=" _blank" data-action="share/whatsapp/share"><BiHelpCircle fontSize="2rem"/></a>
+                        <a href="https://wa.me/+254798450464/?text=HELP: Crypto-Trading-Appvtwo" target=" _blank" data-action="share/whatsapp/share"><BiHelpCircle fontSize="2rem"/></a>
                         </li>
                     </>}
                 </ul>
