@@ -46,15 +46,15 @@ export default function NavBar() {
                             <span>Home</span>
                         </NavLink>
                     </li>
+                        <li>
+                            <NavLink to="/markets" onClick={handleMenu}>
+                                <span>Markets</span>
+                            </NavLink>
+                        </li>
                     {loggedIn ? <>
                         <li>
                             <NavLink to="/buy-crypto" onClick={handleMenu}>
                                 <span>Buy Crypto</span>
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/markets" onClick={handleMenu}>
-                                <span>Markets</span>
                             </NavLink>
                         </li>
                         <li>

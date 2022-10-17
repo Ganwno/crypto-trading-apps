@@ -30,7 +30,7 @@ export default function Body() {
                 <Route path='/buy-crypto' element={loggedIn ? <BuyCrypto allCoins={allCoins} /> : <NotLoggedIn />}>
                     <Route path='/buy-crypto/:coin' element={<CoinBuycard allCoins={allCoins} />} />
                 </Route>
-                <Route path='/markets' element={loggedIn ? <Markets allCoins={allCoins} /> : <NotLoggedIn />}>
+                <Route path='/markets' element={ <Markets allCoins={allCoins} />}>
                     <Route path='/markets/:coinAndPrice' />
                 </Route>
                 <Route path='/trades' element={loggedIn ? <Trades setuserData={setuserData} userData={userData} /> : <NotLoggedIn />}>
